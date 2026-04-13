@@ -43,6 +43,9 @@
     <button class="tab-btn" data-tab="shopping" role="tab" aria-selected="false" aria-controls="shopping">
       <span class="tab-btn__icon">&#128717;&#65039;</span><span>쇼핑</span>
     </button>
+    <button class="tab-btn" data-tab="daytrips" role="tab" aria-selected="false" aria-controls="daytrips">
+      <span class="tab-btn__icon">&#128652;</span><span>근교 투어</span>
+    </button>
     <button class="tab-btn" data-tab="festivals" role="tab" aria-selected="false" aria-controls="festivals">
       <span class="tab-btn__icon">&#127876;</span><span>축제</span>
     </button>
@@ -954,7 +957,277 @@
 
 </section>
 
-<!-- ==================== TAB 5 : 축제 ==================== -->
+<!-- ==================== TAB 5 : 근교 투어 ==================== -->
+<section id="daytrips" class="panel" role="tabpanel" aria-hidden="true">
+  <div class="sec-head">
+    <h2 class="sec-head__title">근교 투어</h2>
+    <p class="sec-head__sub">바르셀로나에서 당일치기로 다녀올 수 있는 근교 관광지 3곳</p>
+  </div>
+  <div class="grid grid--single">
+
+    <!-- ===== 1. 몬세라트 수도원 ===== -->
+    <article class="card">
+      <div class="card__body">
+        <div class="card__top">
+          <h3 class="card__name">몬세라트 수도원<small>Montserrat Monastery</small></h3>
+          <span class="badge badge--rec"><i class="fa-solid fa-thumbs-up"></i> 필수</span>
+        </div>
+        <div class="card__addr"><i class="fa-solid fa-location-dot"></i><span>Montserrat, 08199 Barcelona (바르셀로나에서 약 60km)</span></div>
+
+        <!-- 교통편 -->
+        <div class="route-box">
+          <div class="route-box__head"><i class="fa-solid fa-route"></i> 바르셀로나에서 가는 방법</div>
+          <div class="route-steps" style="margin-bottom: 10px;">
+            <span class="route-step"><i class="fa-solid fa-train-subway"></i> Placa Espanya역</span>
+            <span class="route-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="route-step"><i class="fa-solid fa-train"></i> FGC R5선</span>
+            <span class="route-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="route-step"><i class="fa-solid fa-mountain"></i> 산악열차 또는 케이블카</span>
+            <span class="route-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="route-step"><i class="fa-solid fa-church"></i> 몬세라트</span>
+          </div>
+        </div>
+
+        <div class="info-list">
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-train"></i></div>
+            <div class="info-text">
+              <strong>Cremallera (산악열차)</strong> - Monistrol de Montserrat역 하차<br>
+              &middot; 왕복 약 <strong>14.50유로</strong> / 편도 약 8.70유로<br>
+              <strong>Aeri (케이블카)</strong> - Aeri de Montserrat역 하차<br>
+              &middot; 왕복 약 <strong>14.00유로</strong> / 편도 약 9.30유로<br>
+              <span style="font-size:12px; color:var(--c-text-muted);">※ T-Mobilitat 교통권 사용 불가, 별도 티켓 필요</span>
+            </div>
+          </div>
+          <div class="info-row"><div class="info-icon ico-price"><i class="fa-solid fa-coins"></i></div>
+            <div class="info-text">
+              <strong>패키지 티켓 (추천)</strong><br>
+              &middot; <strong>Tot Montserrat</strong> (약 71.50유로) : 왕복교통+푸니쿨라+박물관+뷔페식사 올인원<br>
+              &middot; <strong>Trans Montserrat</strong> (약 43.80유로) : 왕복교통+푸니쿨라 (식사/박물관 미포함)<br>
+              <span style="font-size:12px; color:var(--c-text-muted);">Placa Espanya FGC 매표소 또는 온라인 구매 가능</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 전망대 -->
+        <h4 class="sub-label" style="margin-top:18px;"><i class="fa-solid fa-binoculars"></i> 전망대 (Sant Joan 푸니쿨라)</h4>
+        <div class="info-list">
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-cable-car"></i></div>
+            <div class="info-text">
+              <strong>Sant Joan 푸니쿨라</strong>로 몬세라트 최고 전망대까지 이동<br>
+              &middot; 왕복 약 <strong>17.00유로</strong> / 편도 약 11.00유로<br>
+              &middot; 정상에서 <strong>피레네 산맥, 카탈루냐 평원</strong>, 맑은 날에는 <strong>지중해</strong>까지 조망 가능<br>
+              &middot; 다양한 하이킹 코스의 출발점이기도 함
+            </div>
+          </div>
+          <div class="info-row"><div class="info-icon ico-warn"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="info-text"><strong>Santa Cova 푸니쿨라</strong>는 현재 보수 공사 중으로 운행 중단 상태 (방문 전 확인 필수)</div>
+          </div>
+        </div>
+
+        <!-- 검은 성모상 -->
+        <h4 class="sub-label" style="margin-top:18px;"><i class="fa-solid fa-hand-holding-heart"></i> 검은 성모상 (La Moreneta)</h4>
+        <div class="info-list">
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-lightbulb"></i></div>
+            <div class="info-text">
+              대성당 오른쪽 입구에서 줄을 서서 관람. 성모상의 손을 만지는 것이 전통<br>
+              &middot; 대기시간: 보통 <strong>20~45분</strong>, 관광버스 도착 시 1시간 이상<br>
+              &middot; <strong>오후 시간대</strong>가 비교적 한가함<br>
+              &middot; 매일 <strong>13:00</strong> 에스콜라니아 소년 합창단 공연 시 대기줄이 짧아짐<br>
+              &middot; 어깨와 무릎을 가리는 복장 권장
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <strong><i class="fa-solid fa-circle-info"></i> 팁</strong> &middot; 하루 투어로 아침 일찍 출발 추천 (오전 8~9시) &middot; 패키지 티켓은 온라인 사전 구매가 편리 &middot; 푸니쿨라를 타고 올라간 뒤 하이킹으로 내려오는 코스도 인기
+        </div>
+      </div>
+      <div class="card__map" data-q="Montserrat Monastery Barcelona" data-link="https://maps.app.goo.gl/montserrat">
+        <div class="card__map-ph"><i class="fa-solid fa-map-location-dot"></i><span>지도 보기</span></div>
+        <a href="https://www.google.com/maps/place/Montserrat+Monastery/" target="_blank" rel="noopener" class="map-link"><i class="fa-solid fa-up-right-from-square"></i> Google Maps</a>
+      </div>
+    </article>
+
+    <!-- ===== 2. 지로나 ===== -->
+    <article class="card">
+      <div class="card__body">
+        <div class="card__top">
+          <h3 class="card__name">지로나<small>Girona</small></h3>
+          <span class="badge badge--star"><i class="fa-solid fa-star"></i> 왕좌의 게임</span>
+        </div>
+        <div class="card__addr"><i class="fa-solid fa-location-dot"></i><span>Girona (바르셀로나에서 약 100km)</span></div>
+
+        <!-- 교통편 -->
+        <div class="route-box">
+          <div class="route-box__head"><i class="fa-solid fa-route"></i> 바르셀로나에서 가는 방법</div>
+          <div class="route-steps" style="margin-bottom: 10px;">
+            <span class="route-step"><i class="fa-solid fa-train-subway"></i> Barcelona Sants역</span>
+            <span class="route-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="route-step"><i class="fa-solid fa-train"></i> Renfe AVE/Avant</span>
+            <span class="route-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="route-step"><i class="fa-solid fa-city"></i> Girona역</span>
+          </div>
+        </div>
+
+        <div class="info-list">
+          <div class="info-row"><div class="info-icon ico-price"><i class="fa-solid fa-coins"></i></div>
+            <div class="info-text">
+              <strong>AVE / Avant (고속열차)</strong> : 약 <strong>38분</strong>, 편도 약 <strong>7~12유로</strong> (조기예매 시 더 저렴)<br>
+              <strong>Media Distancia (일반열차)</strong> : 약 <strong>1시간 20~40분</strong>, 편도 약 <strong>5~7유로</strong><br>
+              <span style="font-size:12px; color:var(--c-text-muted);">Tip: renfe.com에서 3~6개월 전 조기예매 시 최저가 확보 가능</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 왕좌의 게임 촬영지 -->
+        <h4 class="sub-label" style="margin-top:18px;"><i class="fa-solid fa-dragon"></i> 왕좌의 게임 (Game of Thrones) 촬영지</h4>
+        <div class="info-list">
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-landmark-dome"></i></div>
+            <div class="info-text">
+              <strong>지로나 대성당 (Catedral de Girona)</strong><br>
+              시즌 6 <strong>'바엘로르 대성전(Great Sept of Baelor)'</strong> 촬영지. 제이미 라니스터가 말을 타고 대성당 계단을 올라가는 명장면이 촬영된 곳<br>
+              &middot; 입장료: 약 <strong>7~10유로</strong> (대성당+성 펠리우 성당+미술관 통합권)
+            </div>
+          </div>
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-archway"></i></div>
+            <div class="info-text">
+              <strong>유대인 지구 (El Call)</strong><br>
+              아리아 스타크의 <strong>'브라보스(Braavos)' 거리</strong>로 사용된 좁은 중세 골목길. <strong>비숍 호셉 카르타나 거리 계단</strong>이 가장 유명한 포토스팟
+            </div>
+          </div>
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-bath"></i></div>
+            <div class="info-text">
+              <strong>아랍 목욕탕 (Banys Arabs)</strong><br>
+              도른(Dorne) 관련 장면 촬영지. 12세기 무어 양식의 아름다운 목욕탕<br>
+              &middot; 입장료: 약 <strong>3유로</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 기타 관광 포인트 -->
+        <h4 class="sub-label" style="margin-top:18px;"><i class="fa-solid fa-camera"></i> 기타 관광 포인트</h4>
+        <div class="info-list">
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-palette"></i></div>
+            <div class="info-text">
+              <strong>오냐르 강 컬러풀 하우스 (Cases de l'Onyar)</strong><br>
+              강변에 늘어선 파스텔톤 건물들은 지로나의 대표 포토스팟. <strong>Pont de les Peixateries Velles</strong> (에펠 회사가 설계한 철제 다리)에서 감상 추천
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <strong><i class="fa-solid fa-circle-info"></i> 팁</strong> &middot; 도보로 구시가지 전체를 돌아볼 수 있어 반나절~하루 코스로 적당 &middot; 대성당 계단 앞에서 왕좌의 게임 포즈 사진 필수! &middot; 점심은 구시가지 골목 타파스 바 추천
+        </div>
+      </div>
+      <div class="card__map" data-q="Girona Cathedral Spain" data-link="https://www.google.com/maps/place/Girona+Cathedral/">
+        <div class="card__map-ph"><i class="fa-solid fa-map-location-dot"></i><span>지도 보기</span></div>
+        <a href="https://www.google.com/maps/place/Girona+Cathedral/" target="_blank" rel="noopener" class="map-link"><i class="fa-solid fa-up-right-from-square"></i> Google Maps</a>
+      </div>
+    </article>
+
+    <!-- ===== 3. 시제스 ===== -->
+    <article class="card">
+      <div class="card__body">
+        <div class="card__top">
+          <h3 class="card__name">시제스<small>Sitges</small></h3>
+          <span class="badge badge--free"><i class="fa-solid fa-umbrella-beach"></i> 해변</span>
+        </div>
+        <div class="card__addr"><i class="fa-solid fa-location-dot"></i><span>Sitges (바르셀로나에서 약 35km)</span></div>
+
+        <!-- 교통편 -->
+        <div class="route-box">
+          <div class="route-box__head"><i class="fa-solid fa-route"></i> 바르셀로나에서 가는 방법</div>
+          <div class="route-steps" style="margin-bottom: 10px;">
+            <span class="route-step"><i class="fa-solid fa-train-subway"></i> Barcelona Sants역</span>
+            <span class="route-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="route-step"><i class="fa-solid fa-train"></i> Renfe R2 Sud</span>
+            <span class="route-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+            <span class="route-step"><i class="fa-solid fa-umbrella-beach"></i> Sitges역</span>
+          </div>
+        </div>
+
+        <div class="info-list">
+          <div class="info-row"><div class="info-icon ico-price"><i class="fa-solid fa-coins"></i></div>
+            <div class="info-text">
+              <strong>Renfe Rodalies R2 Sud선</strong><br>
+              &middot; 소요시간: 약 <strong>30~37분</strong><br>
+              &middot; 편도 약 <strong>5~6유로</strong> (Zone 4 티켓)<br>
+              &middot; 배차간격: 10~20분 (매우 자주 운행)<br>
+              &middot; T-Casual 교통권(Zone 4) 사용 가능<br>
+              <span style="font-size:12px; color:var(--c-text-muted);">Passeig de Gracia역에서도 탑승 가능</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 해변 포인트 -->
+        <h4 class="sub-label" style="margin-top:18px;"><i class="fa-solid fa-water"></i> 추천 해변</h4>
+        <div class="info-list">
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-star"></i></div>
+            <div class="info-text">
+              <strong>Platja de la Ribera</strong><br>
+              산트 바르토메우 성당 바로 아래 메인 해변. 시제스에서 가장 인기 있고 활기찬 곳
+            </div>
+          </div>
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-camera"></i></div>
+            <div class="info-text">
+              <strong>Platja de Sant Sebastia</strong><br>
+              구시가지에서 가장 가까운 해변. 절벽 위 성당이 배경으로 보이는 <strong>시제스에서 가장 포토제닉한 해변</strong>
+            </div>
+          </div>
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-umbrella-beach"></i></div>
+            <div class="info-text">
+              <strong>Platja de Terramar</strong><br>
+              서쪽 끝에 위치한 조용한 해변. 정원으로 둘러싸인 <strong>한적하고 여유로운 분위기</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 성당 전망대 -->
+        <h4 class="sub-label" style="margin-top:18px;"><i class="fa-solid fa-church"></i> 산트 바르토메우 성당 전망대</h4>
+        <div class="info-list">
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-binoculars"></i></div>
+            <div class="info-text">
+              <strong>Church of Sant Bartomeu i Santa Tecla</strong><br>
+              바위 곶 위에 우뚝 선 17세기 성당. 양쪽 해변을 내려다보는 <strong>Baluard 테라스</strong>에서 지중해 파노라마 뷰 감상 가능<br>
+              &middot; 성당 입장 <strong>무료</strong> / 가이드 투어 시 종탑 360도 전망 가능
+            </div>
+          </div>
+        </div>
+
+        <!-- 구시가지 -->
+        <h4 class="sub-label" style="margin-top:18px;"><i class="fa-solid fa-person-walking"></i> 구시가지 산책 포인트</h4>
+        <div class="info-list">
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-road"></i></div>
+            <div class="info-text">
+              <strong>Passeig Maritim</strong> : 약 3km 해변 산책로. 야자수, 모더니즘 빌라, 카페가 늘어선 시제스의 하이라이트
+            </div>
+          </div>
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-palette"></i></div>
+            <div class="info-text">
+              <strong>Carrer d'en Bosch</strong> : 하얀 벽에 파란 문, 부겐빌레아가 어우러진 시제스에서 가장 예쁜 골목
+            </div>
+          </div>
+          <div class="info-row"><div class="info-icon ico-tip"><i class="fa-solid fa-building-columns"></i></div>
+            <div class="info-text">
+              <strong>Cau Ferrat &middot; Maricel 미술관</strong> : 피카소, 엘 그레코 작품 소장. 바다가 보이는 갤러리가 인상적
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <strong><i class="fa-solid fa-circle-info"></i> 팁</strong> &middot; 바르셀로나에서 가장 가까운 해변 도시로 반나절이면 충분 &middot; 오전에 가서 해변 산책 + 점심 + 구시가지 관광 코스 추천 &middot; 일몰 시간에 성당 테라스에서 보는 석양이 압권
+        </div>
+      </div>
+      <div class="card__map" data-q="Church Sant Bartomeu Sitges" data-link="https://www.google.com/maps/place/Sitges/">
+        <div class="card__map-ph"><i class="fa-solid fa-map-location-dot"></i><span>지도 보기</span></div>
+        <a href="https://www.google.com/maps/place/Sitges/" target="_blank" rel="noopener" class="map-link"><i class="fa-solid fa-up-right-from-square"></i> Google Maps</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ==================== TAB 6 : 축제 ==================== -->
 <section id="festivals" class="panel" role="tabpanel" aria-hidden="true">
   <div class="sec-head">
     <h2 class="sec-head__title">축제 정보</h2>

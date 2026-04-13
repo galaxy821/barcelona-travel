@@ -597,6 +597,7 @@ button { font-family: inherit; }
   }
 
   .grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .grid--single { grid-template-columns: 1fr; max-width: 780px; }
   .card__map { height: 190px; }
   .card__body { padding: 24px; }
   .content { padding: 36px 28px 90px; }
