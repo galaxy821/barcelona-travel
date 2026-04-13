@@ -4,7 +4,7 @@ interface Props {
   activeTab: string;
 }
 const { title, activeTab } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 const tabs = [
   { id: 'accommodation', path: '', emoji: '🏨', label: '숙소' },
@@ -44,7 +44,7 @@ const tabs = [
     <div class="tab-nav" role="tablist">
       {tabs.map((tab) => (
         <a
-          href={`${base}${tab.path}`}
+          href={`${base}/${tab.path}`}
           class={`tab-btn${activeTab === tab.id ? ' active' : ''}`}
           role="tab"
           aria-selected={activeTab === tab.id ? 'true' : 'false'}
