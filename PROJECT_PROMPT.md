@@ -1,44 +1,68 @@
-# 바르셀로나 여행 꿀팁 블로그 - 프로젝트 프롬프트
+# 바르셀로나 여행 꿀팁 가이드 - 프로젝트 프롬프트
+
+> **라이브 URL**: https://galaxy821.github.io/barcelona-travel/
+> **레포지토리**: https://github.com/galaxy821/barcelona-travel
+> **정보 기준일**: 2025년 12월
+
+---
 
 ## 프로젝트 개요
 
-스페인 바르셀로나 여행 경험을 기반으로 한 **여행 꿀팁 블로그 포스팅 웹페이지**를 제작한다.
-방문자가 실용적인 여행 정보를 깔끔하고 직관적으로 탐색할 수 있도록 최신 UX/UI 트렌드를 반영한 단일 페이지(SPA 스타일) 웹사이트를 구현한다.
+스페인 바르셀로나 여행 경험을 기반으로 한 **여행 꿀팁 블로그 포스팅 웹페이지**.
+방문자가 실용적인 여행 정보를 깔끔하고 직관적으로 탐색할 수 있도록 최신 UX/UI 트렌드를 반영한 단일 페이지(SPA 스타일) 웹사이트로 구현.
+GitHub Pages로 호스팅하여 누구나 접근 가능.
 
 ---
 
 ## 기술 스택
 
-- HTML5 + CSS3 + Vanilla JavaScript (ES6+)
-- 최신 CSS 기능 활용 (Flexbox, Grid, Custom Properties)
-- CSS Custom Properties (디자인 토큰)
-- CSS Grid + Flexbox 기반 반응형 레이아웃
-- Google Maps Embed API (iframe 인라인 지도)
-- Font Awesome (CDN) + 이모지 아이콘 활용
-- Google Fonts (Noto Sans KR)
+- **HTML5 + CSS3 + Vanilla JavaScript (ES6+)** - 프레임워크 없이 경량 구현
+- CSS Custom Properties (디자인 토큰), CSS Grid + Flexbox 반응형 레이아웃
+- Google Maps Embed API (iframe 인라인 지도, Intersection Observer lazy loading)
+- Font Awesome 6.5.1 (CDN)
+- Google Fonts: Noto Sans KR + Playfair Display
+- GitHub Actions로 자동 배포 (GitHub Pages)
 
 ---
 
 ## 디자인 컨셉
 
-### 전체 톤 & 무드
+### 컬러 시스템
 
-- **웜톤 지중해 감성**: 바르셀로나의 따뜻한 햇살, 가우디 건축의 컬러감을 반영
-- 메인 컬러: 테라코타/산호색 계열 + 화이트 + 다크 네이비
-- 액센트: 골드/앰버 (스페인 감성)
-- 깔끔한 여백, 부드러운 라운드 카드 UI
-- 타이포그래피: Noto Sans KR (Google Fonts) + 시스템 폰트 스택
-- 아이콘: 이모지 + Font Awesome (CDN)
+| 토큰 | 색상 | 용도 |
+|------|------|------|
+| `--c-primary` | #C65D3E (테라코타) | 메인 액션, 인디케이터, 강조 |
+| `--c-accent` | #D4A04A (골드/앰버) | 보조 강조, 팁 아이콘 |
+| `--c-navy` | #1C2B4A (다크 네이비) | 제목, 카드 네임 |
+| `--c-bg` | #F8F4F0 (웜 베이지) | 배경 |
+| `--c-card` | #FFFFFF | 카드 배경 |
 
-### UX/UI 트렌드 반영 사항
+### UX/UI 트렌드 반영
 
-1. **Bento Grid 레이아웃**: 각 장소 카드를 벤토 그리드 스타일로 배치
-2. **Glassmorphism 헤더**: 스크롤 시 반투명 글래스 효과 상단 네비게이션
-3. **Smooth Tab Transition**: 탭 전환 시 부드러운 애니메이션
-4. **Micro-interactions**: 카드 호버 시 살짝 떠오르는 효과, 탭 인디케이터 슬라이딩
-5. **Sticky Tab Navigation**: 스크롤해도 탭 메뉴가 상단에 고정
-6. **카드 기반 UI**: 각 장소 정보를 카드 형태로 구성
-7. **인라인 미니맵**: 각 카드 내 Google Maps iframe 삽입 (클릭 시 구글 지도 이동)
+1. **Glassmorphism 탭바**: `backdrop-filter: blur(18px)` 반투명 글래스 효과, 스크롤 시 그림자 추가
+2. **Bento Grid 레이아웃**: 카드를 그리드로 배치 (모바일 1열 / 태블릿 2열 / 데스크톱 2~3열)
+3. **Sliding Tab Indicator**: 탭 전환 시 하단 인디케이터가 슬라이딩 애니메이션
+4. **Micro-interactions**: 카드 호버 시 `translateY(-3px)` + 그림자 확대
+5. **Sticky Tab Navigation**: 스크롤해도 탭 메뉴 상단 고정
+6. **카드 기반 UI**: 라운드 카드(20px radius), 정보 아이콘 + 텍스트 조합
+7. **인라인 미니맵**: Google Maps iframe lazy loading (Intersection Observer), 오버레이 버튼으로 구글 지도 바로가기
+
+---
+
+## 파일 구조
+
+```
+travel/
+├── index.html                  # 메인 HTML (전체 콘텐츠)
+├── css/
+│   └── style.css               # 스타일시트 (디자인 토큰, 반응형, 컴포넌트)
+├── js/
+│   └── app.js                  # 탭 전환, 인디케이터, 스크롤 탑, 지도 lazy loading
+├── .github/
+│   └── workflows/
+│       └── deploy.yml          # GitHub Pages 자동 배포 워크플로우
+└── PROJECT_PROMPT.md           # 이 문서
+```
 
 ---
 
@@ -46,52 +70,72 @@
 
 ### 1. 히어로 섹션
 
-- 바르셀로나 테마 그라데이션 배경 + 타이포그래피
+- 바르셀로나 테마 그라데이션 배경 (네이비 → 테라코타 → 골드)
+- 플로팅 오브 장식 (CSS ::before/::after, blur 80px)
 - 블로그 제목: "Barcelona Travel Information : 2025 ver"
-- 부제: "2025년 12월 기준 | 실제 여행 경험 기반"
-- 간단한 인트로 텍스트
+- 부제: "실제 여행 경험을 기반으로 정리한 바르셀로나 여행 꿀팁 가이드"
+- 기준일 표시: "2025년 12월 기준"
 
-### 2. 탭 네비게이션 (Sticky)
+### 2. 탭 네비게이션 (Sticky, 6개 탭)
 
-4개 탭으로 구성:
-| 탭 | 아이콘 | 내용 |
+| 탭 | 아이콘 | 콘텐츠 |
 |---|---|---|
 | 숙소 | 🏨 | 추천 숙소 2곳 |
-| 가볼만한 곳 | 📍 | 관광 명소 11곳+ |
-| 식당 | 🍽️ | 추천 식당 12곳+ |
-| 쇼핑 | 🛍️ | 쇼핑 스팟 5곳 |
+| 가볼만한 곳 | 📍 | 관광 명소 11곳 |
+| 식당 | 🍽️ | 추천 식당 12곳 (사그라다 파밀리아 주변 맛집 별도 섹션) |
+| 쇼핑 | 🛍️ | 쇼핑 스팟 15곳 (4개 카테고리) |
+| 근교 투어 | 🚌 | 당일치기 근교 3곳 (몬세라트, 지로나, 시제스) |
+| 축제 | 🎄 | 크리스마스 마켓 3곳 + 기타 이벤트 2곳 |
 
-### 3. 콘텐츠 영역 (탭별)
-
-#### 각 장소 카드 구성요소:
+### 3. 콘텐츠 카드 구성
 
 ```
-┌─────────────────────────────────────┐
-│  [장소 이름]            [카테고리 뱃지] │
-│  ───────────────────────────────── │
-│  📍 주소                            │
-│  ───────────────────────────────── │
-│  💡 꿀팁 / 추천 포인트                │
-│  💰 가격 정보 (해당 시)               │
-│  ⏰ 운영시간 / 휴무일 (해당 시)        │
-│  ───────────────────────────────── │
-│  ┌─────────────────────────────┐   │
-│  │    Google Maps 미니맵        │   │
-│  │    (iframe embed)           │   │
-│  │    클릭 → 구글 지도 열기      │   │
-│  └─────────────────────────────┘   │
-└─────────────────────────────────────┘
+┌──────────────────────────────────────┐
+│  [장소 이름 / 영문명]    [카테고리 뱃지] │
+│  ──────────────────────────────────  │
+│  📍 주소                             │
+│  ──────────────────────────────────  │
+│  💡 꿀팁 / 추천 포인트                 │
+│  💰 가격 정보                         │
+│  ⏰ 운영시간 / 휴무일                  │
+│  📞 전화번호 (해당 시)                 │
+│  ──────────────────────────────────  │
+│  ┌──────────────────────────────┐    │
+│  │   Google Maps 인라인 지도      │    │
+│  │   (lazy loaded iframe)       │    │
+│  │   [Google Maps 바로가기 →]    │    │
+│  └──────────────────────────────┘    │
+└──────────────────────────────────────┘
 ```
+
+### 4. 특수 컴포넌트
+
+- **route-box**: 교통 루트 시각화 (스텝 버블 + 화살표) - 몬주익 성, 몬세라트, 지로나, 시제스
+- **schedule table (sched)**: 분수 쇼 시간표 등 표 형태 정보
+- **highlight-box**: 강조 팁 박스 (그라데이션 배경 + 테두리)
+- **sub-label**: 카테고리 구분 라벨 (좌측 컬러 보더)
+- **item-list / item-row**: 쇼핑 아이템 리스트 (아이콘 + 상품명 + 설명)
+- **badge**: 카테고리 뱃지 (가우디, 추천, 무료, 가성비 등)
+
+### 5. 푸터 + 스크롤 탑 버튼
+
+- 정보 기준일 안내
+- 플로팅 스크롤 탑 버튼 (scrollY > 460 시 표시)
 
 ---
 
 ## 반응형 브레이크포인트
 
-| 디바이스 | 너비         | 카드 그리드     |
-| -------- | ------------ | --------------- |
-| 모바일   | ~767px       | 1열 (세로 스택) |
-| 태블릿   | 768px~1023px | 2열 그리드      |
-| 데스크톱 | 1024px~      | 2~3열 그리드    |
+| 디바이스 | 너비 | 카드 그리드 | 탭 스타일 |
+|---------|------|-----------|----------|
+| 모바일 | ~767px | 1열 | 세로 (아이콘 + 텍스트), 11px |
+| 태블릿 | 768px~ | 2열 | 가로 (아이콘 + 텍스트), 13.5px |
+| 데스크톱 | 1024px~ | 2열 (가볼만한 곳: 3열) | 가로 |
+| 와이드 | 1280px~ | 가볼만한 곳: 3열 | 가로 |
+
+- `grid--wide`: 가볼만한 곳 탭 전용 (데스크톱 3열)
+- `grid--single`: 근교 투어 탭 전용 (항상 1열 전체 너비)
+- 탭 버튼: `white-space: nowrap`으로 항상 한 줄 표시
 
 ---
 
@@ -103,6 +147,7 @@
 
 - **주소**: Rambla dels Caputxins, 37, Ciutat Vella, 08002 Barcelona
 - **구글 지도**: https://maps.app.goo.gl/mAUC6m1oohFHbh2o9
+- **뱃지**: 추천
 - **꿀팁**:
   - 트윈룸 크기는 크지 않지만 깔끔하고 체크인 수월
   - 도시세 22유로 별도
@@ -114,8 +159,7 @@
 - **주소**: Carrer del Carme, 38, Ciutat Vella, 08001 Barcelona
 - **구글 지도**: https://maps.app.goo.gl/hsy6zSpK21sDJg1z9
 - **꿀팁**:
-  - 트윈룸 크기 작고, 숙소1보다 오래된 느낌
-  - 체크인 수월
+  - 트윈룸 크기 작고, 숙소1보다 오래된 느낌이지만 체크인 수월
   - Liceu 역 근처, 라보케리아 시장이 바로 코앞
   - 까르푸 근처, 카탈루냐 광장·구시가지·해변 도보 이동 가능
 
@@ -123,235 +167,184 @@
 
 ### 탭 2: 가볼만한 곳 (11곳)
 
-#### 1. 에스파냐 광장 (Plaça Reial)
+| # | 장소명 | 뱃지 | 입장료 | 핵심 포인트 |
+|---|--------|------|--------|------------|
+| 1 | 에스파냐 광장 (Placa Reial) | 무료 | 무료 | 가우디 가로등 작품, 광장 내 식당 비추 |
+| 2 | 바르셀로나 대성당 | - | 무료 (특별구역 약 9유로) | 고딕 양식의 웅장한 대성당 |
+| 3 | 카탈루냐 음악당 | - | 가이드 투어 약 20유로 | 유네스코 세계문화유산, 스테인드글라스 |
+| 4 | 카사 바트요 | 가우디 | 약 35유로~ | 투어 추천, 아침 일찍 입장, 기념품점 비쌈 |
+| 5 | 카사 밀라 (La Pedrera) | 가우디 | 약 25유로~ | 개별 방문 추천, 옥상에서 사그라다 파밀리아 조망 |
+| 6 | 구엘 공원 | 가우디 | 약 10유로 | 시내 전경 조망, 벙커(Turo de la Rovira) 추가 추천 |
+| 7 | 사그라다 파밀리아 | 가우디 | 약 26유로~ (타워 36유로~) | 필수 관광명소, 실내 강추, 소매치기 주의 |
+| 8 | 구엘 저택 | 가우디 | 약 12유로 | 실내 구경 추천, 가우디 초기 작품 |
+| 9 | 몬주익 마법의 분수 | 무료 | 무료 | 분수 쇼 일정표 포함 (시즌별 시간 상이), 관람 팁 |
+| 10 | 몬주익 성 | - | 약 5유로 | 케이블카 추천 루트 (L3→푸니쿨라→텔레페릭), 일요일 15시후 무료 |
+| 11 | 티비다보 놀이공원 | - | 약 35유로 | 시간 여유 시 추천, 최고 전망 |
 
-- **주소**: Pl. Reial, 10, Ciutat Vella, 08002 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/Vy94BoweoUtxaYsV7
-- **포인트**: 가우디의 가로등 작품 감상
-- **주의**: 광장 내 식당은 가격이 비싸서 비추천
-- **입장료**: 무료
+#### 몬주익 분수 쇼 일정 (2025년 기준)
 
-#### 2. 바르셀로나 대성당 (Cathedral of Barcelona)
+| 시즌 | 요일 | 시간 |
+|------|------|------|
+| 동절기 (11~2월) | 목/금/토 | 20:00~21:00 |
+| 춘추절기 (3~5월, 10월) | 목/금/토 | 21:00~22:00 |
+| 하절기 (6~9월) | 수~일 | 21:30~22:30 |
 
-- **주소**: Pla de la Seu, s/n, Ciutat Vella, 08002 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/ruj7SfydoB28Hsfx6
-- **포인트**: 고딕 양식의 웅장한 대성당
-- **입장료**: 무료 (특별 구역 유료, 약 9유로)
+#### 몬주익 성 케이블카 추천 루트
 
-#### 3. 카탈루냐 음악당 (Palau de la Música Catalana)
-
-- **주소**: C/ Palau de la Música, 4-6, Ciutat Vella, 08003 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/sgN3tda35TogsMoPA
-- **포인트**: 유네스코 세계문화유산, 화려한 스테인드글라스
-- **입장료**: 가이드 투어 약 20유로
-
-#### 4. 카사 바트요 (Casa Batlló) - 가우디 작품
-
-- **주소**: Pg. de Gràcia, 43, Eixample, 08007 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/wMD9o7pQkXgNDW6E9
-- **포인트**: 투어 추천, 아침 일찍 입장하면 대기줄 없음
-- **주의**: 기념품점 구경하기 좋지만 비싼 편
-- **입장료**: 약 35유로~ (온라인 사전 예매 추천)
-
-#### 5. 카사 밀라 (Casa Milà / La Pedrera) - 가우디 작품
-
-- **주소**: Pg. de Gràcia, 92, Eixample, 08008 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/dVpC4BJR9XFpmCNeA
-- **포인트**: 한국인 투어에서 내부 관람을 빼는 경우가 많으므로 개별 방문 추천
-- **특이사항**: 옥상에서 사그라다 파밀리아 성당 조망 가능
-- **입장료**: 약 25유로~ (온라인 사전 예매 추천)
-
-#### 6. 구엘 공원 (Park Güell) - 가우디 작품
-
-- **주소**: Gràcia, 08024 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/mYAFUvqUXgGzpuQs6
-- **포인트**:
-  - 버스로 한 번에 이동 가능 (투어 관광버스가 더 편함)
-  - 공원이 넓어서 구석구석 돌아다니며 구경하기 좋음
-  - 고지대라 바르셀로나 시내 전경 조망 가능
-- **추가 추천**: 바르셀로나 시내를 완전히 내려다보고 싶다면 벙커(Turó de la Rovira) 추천
-  - 주소: Carrer de Marià Labèrnia, s/n, Horta-Guinardó, 08032 Barcelona
-  - https://maps.app.goo.gl/weR9UuegK71s7Bzx8
-- **입장료**: 약 10유로 (온라인 사전 예매 필수)
-
-#### 7. 사그라다 파밀리아 (Basílica de la Sagrada Família) - 가우디 작품
-
-- **주소**: Carrer de Mallorca, 401, Eixample, 08013 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/6xEVkPi8RdEWawiq8
-- **포인트**: 바르셀로나 필수 관광명소, 실내 구경 강력 추천
-- **주의**: 사람이 매우 많음, 소매치기 주의! 투어에서 실내 미포함인 경우 많으므로 별도 티켓 예약 추천
-- **입장료**: 약 26유로~ (온라인 사전 예매 필수, 타워 포함 시 36유로~)
-
-#### 8. 구엘 저택 (Palau Güell) - 가우디 작품
-
-- **주소**: Carrer Nou de la Rambla, 3-5, Ciutat Vella, 08001 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/d5VCkQEdvy35r4JV6
-- **포인트**: 실내 구경 추천
-- **입장료**: 약 12유로
-
-#### 9. 몬주익 마법의 분수 (Font Màgica de Montjuïc)
-
-- **주소**: Pl. de Carles Buïgas, Sants-Montjuïc, 08038 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/bGQB4sKj52jERU7B8
-- **분수 쇼 일정 (2025년 기준)**:
-  - 동절기 (11월~2월): 목·금·토 20:00~21:00 (15분 간격 공연)
-  - 하절기 (6월~9월): 수·목·금·토·일 21:30~22:30
-  - 춘추절기 (3월~5월, 10월): 목·금·토 21:00~22:00
-  - ※ 시즌별 변동 가능, 바르셀로나 시 공식 사이트에서 사전 확인 권장
-- **관람 팁**:
-  - 무료 관람
-  - 분수 정면 계단에서 보는 것이 가장 좋은 뷰
-  - 일찍 도착하여 정면 자리 확보 추천 (최소 30분 전)
-  - 음악과 조명에 맞춰 물줄기가 춤추는 공연 (약 15분)
-  - 카메라보다 눈으로 감상 추천
-
-#### 10. 몬주익 성 (Castell de Montjuïc)
-
-- **주소**: Ctra. de Montjuïc, 66, Sants-Montjuïc, 08038 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/U9njvq2VXLhXgu8h6
-- **케이블카 이용 방법**:
-  - **텔레페릭 데 몬주익 (Teleféric de Montjuïc)**:
-    - 몬주익 공원 중턱 → 몬주익 성 정상 구간 운행
-    - 탑승장소: Parc de Montjuïc 역 (지하철 L3 Paral·lel역에서 푸니쿨라 환승 → 몬주익 푸니쿨라 상부역 도착 → 도보 이동 후 텔레페릭 탑승)
-    - 운행시간: 10:00~19:00 (시즌별 변동)
-    - 요금: 편도 약 9.40유로 / 왕복 약 14.20유로
-  - **추천 루트**: 지하철 L3 Paral·lel역 → 푸니쿨라(무료, T-Casual 교통권 사용 가능) → 텔레페릭 → 몬주익 성
-  - 내려올 때는 도보로 산책하며 내려오는 것도 추천
-- **입장료**: 약 5유로 (일요일 15시 이후 무료, 매월 첫째 일요일 종일 무료)
-
-#### 11. 티비다보 놀이공원 (Parc d'Atraccions Tibidabo)
-
-- **주소**: Parc d'atraccions Tibidabo
-- **구글 지도**: https://maps.app.goo.gl/cAs1dF7Egoexysy7A
-- **포인트**: 시간 여유가 있다면 방문 추천, 바르셀로나 최고 전망
-- **입장료**: 약 35유로
+L3 Paral·lel역 → 푸니쿨라 (무료, T-Casual 가능) → 텔레페릭 (편도 9.40유로/왕복 14.20유로) → 몬주익 성
 
 ---
 
 ### 탭 3: 식당 (12곳)
 
-#### 1. Bar Anxoita
+#### 일반 맛집 (4곳)
 
-- **주소**: Carrer de Mallorca, 250, Eixample, 08008 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/uP61JP4TgXXgwYA78
-- **추천 메뉴**: 꿀대구 (Bacalao) 6~8유로
-- **팁**: 점심시간 웨이팅 있을 수 있음
+| # | 장소명 | 추천 메뉴 | 가격대 | 팁 |
+|---|--------|----------|--------|-----|
+| 1 | Bar Anxoita | 꿀대구 (Bacalao) | 6~8유로 | 점심시간 웨이팅 있을 수 있음 |
+| 2 | Vinitus | 꿀대구 (Bacalao) | - | 웨이팅 거의 필수 |
+| 3 | 라보케리아 시장 | 과일, 해산물, 타파스 | - | 바르셀로나 대표 재래시장 |
+| 4 | Makamaka | 수제 버거 | - | 바르셀로네타 해변 근처 |
 
-#### 2. Vinitus
+#### 사그라다 파밀리아 주변 맛집 (8곳)
 
-- **주소**: Carrer del Consell de Cent, 333, Eixample, 08007 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/sjFgeEixxgW1U6HX6
-- **추천 메뉴**: 꿀대구 (Bacalao)
-- **팁**: 웨이팅 거의 필수
-
-#### 3. 라보케리아 시장 (Mercat de la Boqueria)
-
-- **주소**: La Rambla, 91, Ciutat Vella, 08001 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/8aPRMiDFt9rVd8cF7
-- **포인트**: 바르셀로나 대표 재래시장, 신선한 과일·해산물·타파스
-
-#### 4. Makamaka Barcelona
-
-- **주소**: Pg. de Joan de Borbó, 76, Ciutat Vella, 08039 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/t3Cbb851z3nVT67BA
-- **추천 메뉴**: 수제 버거
-- **팁**: 바르셀로네타 해변 근처, 해변 갈 겸 들리기 좋음
-
-#### 5. Oporto Restaurante ★
-
-- **구글 지도**: https://goo.gl/maps/7gWvPPTQAMvVMVtk7
-- **추천 메뉴**: 국물 빠에야(Arroz de marisco), 문어 세비체(Pulpo con salsa verde), 문어 구이(Pulpo a Lagareiro)
-- **팁**: 포르투갈 음식, 식후주·포르투갈 껌 제공 / 화요일 휴무
-- **전화**: 932 77 71 58
-
-#### 6. El Glop Gaudi ★
-
-- **구글 지도**: https://goo.gl/maps/LMGbpRSViqb33a3M8
-- **추천 메뉴**: 빠에야 종류
-- **팁**: 카탈루냐 광장 유명 식당의 새 체인점, 스페인 스파클링 와인 까바 한 잔
-- **전화**: 934 87 00 97
-
-#### 7. Puertecillo Sagrada Família ★
-
-- **구글 지도**: https://goo.gl/maps/ezdQJ7HoKnHdWtAt5
-- **추천 메뉴**: 오늘의 메뉴(Menu del Dia), 오징어, 맛조개, 토마토 홍합스튜
-- **팁**: 해산물 체인점, 진열대에서 직접 재료 선택 가능, 스페인 식후주 / 월요일 휴무
-- **전화**: 934 50 01 91
-
-#### 8. XYG Malatang Spicy Hotpot ★
-
-- **구글 지도**: https://maps.app.goo.gl/ikFxFD6FVWF9pN4D6
-- **추천 메뉴**: 마라탕 (맵기 단계 선택 가능)
-- **팁**: 뚝배기에 나와 따뜻한 국물, 음료 제공
-- **전화**: 934 99 71 74
-
-#### 9. Vietnam Authentic Restaurant ★
-
-- **구글 지도**: https://maps.app.goo.gl/J9kyYY8XgkZTk9p17
-- **추천 메뉴**: 쌀국수, 오늘의 메뉴
-- **팁**: 추운 날 따뜻한 국물 추천, 환영음료 제공
-- **전화**: 934 46 45 87
-
-#### 10. Paisano Cafè ★
-
-- **구글 지도**: https://goo.gl/maps/Lmto4DnWWGKr4F5E9
-- **추천 메뉴**: 라자냐, 연어 훈제 토스트, 오늘의 파스타
-- **팁**: '동포 카페'라는 이름의 친근한 이탈리아 카페 / 월요일 휴무
-- **전화**: 935 25 04 71
-
-#### 11. The Venue Steakhouse ★
-
-- **구글 지도**: https://goo.gl/maps/uq9XabAj4PSKg1M99
-- **추천 메뉴**: 티본 스테이크
-- **팁**: 친절한 서비스 / 월·화요일 휴무
-- **전화**: 936 39 96 75
-
-#### 12. Bicos Restaurante ★
-
-- **구글 지도**: https://g.page/bicosrestaurante?share
-- **추천 메뉴**: 서버에게 음식 추천 요청
-- **팁**: 갈리시아 레스토랑, 좋은 식재료·분위기·플레이팅 / 월요일 휴무
-- **전화**: 936 11 82 27
+| # | 장소명 | 추천 메뉴 | 휴무일 | 전화 |
+|---|--------|----------|--------|------|
+| 5 | Oporto Restaurante ★ | 국물 빠에야, 문어 세비체, 문어 구이 | 화요일 | 932 77 71 58 |
+| 6 | El Glop Gaudi ★ | 빠에야 종류 | - | 934 87 00 97 |
+| 7 | Puertecillo ★ | Menu del Dia, 오징어, 맛조개, 홍합스튜 | 월요일 | 934 50 01 91 |
+| 8 | XYG Malatang ★ | 마라탕 (맵기 선택 가능) | - | 934 99 71 74 |
+| 9 | Vietnam Authentic ★ | 쌀국수, 오늘의 메뉴 | - | 934 46 45 87 |
+| 10 | Paisano Cafe ★ | 라자냐, 연어 훈제 토스트, 파스타 | 월요일 | 935 25 04 71 |
+| 11 | The Venue Steakhouse ★ | 티본 스테이크 | 월/화요일 | 936 39 96 75 |
+| 12 | Bicos Restaurante ★ | 서버 추천 요청 | 월요일 | 936 11 82 27 |
 
 ---
 
-### 탭 4: 쇼핑 (5곳)
+### 탭 4: 쇼핑 (15곳, 4개 카테고리)
 
-#### 1. 사바테르 (Sabater - Fàbrica de sabons) - 천연비누
+#### 올리브 · 스킨케어 · 수공예 (6곳)
 
-- **주소**: Plaça de Sant Felip Neri, 1, Ciutat Vella, 08002 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/acQGU6iYzaku9YHr7
-- **포인트**: 고딕지구에 위치한 천연비누 전문점
+| # | 장소명 | 유형 | 핵심 포인트 |
+|---|--------|------|------------|
+| 1 | La Chinata | 올리브 오일 전문점 | 트러플 올리브 오일 추천, 올리브유·립밤(2유로)·발사믹소스, 3개 지점 |
+| 2 | Sabon | 스킨 케어 | 사해 소금 제품, 바디스크럽·바디워시 추천 |
+| 3 | Lush | 핸드메이드 스킨케어 | 세계에서 세 번째로 저렴, 비누·입욕제·더티 스프레이 |
+| 4 | 사바테르 (Sabater Hnos.) | 수제 비누 | 삼대 가족 가게, 올리브오일 70%+코코넛오일 30% |
+| 5 | Cereria Subira | 양초 (1761년~) | 사그라다 파밀리아 납품, 성당 실루엣 촛대 추천 |
+| 6 | Primor | 화장품 가게 | 산양유 크림 Ziaja, 콜라겐 크림 Xhekpon 추천 |
 
-#### 2. Cereria Subirà - 양초
+#### 패션 · 가방 · 신발 (3곳)
 
-- **주소**: Baixada de la Llibreteria, 7, Ciutat Vella, 08002 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/p8ogR6Rydsw5BMrr5
-- **포인트**: 사그라다 파밀리아 성당에 양초를 납품하는 가게
+| # | 장소명 | 유형 | 핵심 포인트 |
+|---|--------|------|------------|
+| 7 | La Manual Alpargatera | 에스파듀 (짚신) | 삼대 수제 신발, 한국 사이즈·한국어 안내 가능 |
+| 8 | Calpa | 가죽 가방 | 바르셀로나 보도블럭 무늬 독창적 가방 |
+| 9 | Pinzat | 스페인의 프라이탁 | 예술가 협업 독특한 디자인 가방 |
 
-#### 3. La Chinata - 올리브 오일 전문점
+#### 식품 · 마트 · 백화점 (5곳)
 
-- **주소**: Carrer de la Diputació, 262, Eixample, 08007 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/WhtVYrYXUnvHtWFY6
-- **추천 아이템**:
-  - 올리브유: 직접 빵에 찍어 시식 가능, 프리미엄 올리브유 한국 대비 저렴
-  - 올리브 립밤: 2유로대, 선물용으로 최적
-  - 발사믹 소스: 화이트트러플맛 추천
+| # | 장소명 | 유형 | 추천 아이템 |
+|---|--------|------|------------|
+| 10 | Torrons Vicens | 뚜론 (1775년~) | 구글지도 검색하여 가까운 가게 방문 |
+| 11 | 하몽 전문점 | Reserva Iberica 등 | 한국 반입 금지! 현지에서 많이 먹기, 2개 지점 |
+| 12 | 스페인 와인 | 와인 | 백포도주/스파클링: Penedes, 적포도주: Priorat |
+| 13 | Mercadona | 스페인 국민마트 | 하몽맛 감자칩, 꿀국화차, Valor 초콜릿, 올리브크림, 프로폴리스 스프레이, 에그타르트+착즙 오렌지주스 |
+| 14 | El Corte Ingles | 백화점 | 뚜론(자체브랜드), 라비토스 로열 초콜렛, Sal de Ibiza 이비자 꽃소금 |
 
-#### 4. Mercadona - 스페인 국민마트
+#### 약국 · 건강 (1곳)
 
-- **추천 아이템**:
-  - 하몽맛 감자칩: 과자코너에서 감자칩+하몽 그림 과자
-  - 올리브 크림(Crema Oliva): 화장품코너, 1유로대 바디크림
-  - 꿀국화차(Manzanilla con Miel): Hacendado 자체브랜드
+| # | 장소명 | 유형 | 핵심 포인트 |
+|---|--------|------|------------|
+| 15 | Potenciator | 마시는 수액 영양제 | 한국 1앰플 5,000원 vs 스페인 20앰플 약 28,000원, 약국에서 "뽀뗀씨아또르 뽀르 파보르" |
 
-#### 5. El Corte Inglés Plaça de Catalunya - 백화점
+#### 쇼핑 참고사항
 
-- **주소**: Pl. de Catalunya, 14, Eixample, 08002 Barcelona
-- **구글 지도**: https://maps.app.goo.gl/GyR7e82umZCMRwJ28
-- **추천 아이템**:
-  - 뚜론: 엘꼬르떼 잉글레스 자체브랜드가 비센스보다 저렴
-  - 라비토스 로열 초콜렛(Rabitos Royal): 지하 고메마켓 초콜렛 코너, 달콤한 무화과 초콜렛
+- 가게 방문 전 구글지도에서 영업시간 꼭 확인
+- 한국 직수입 제품 (보니야 감자칩, 롤레아 상그리아, 마티덤 앰플 등)은 가격차 크지 않아 비추
+- 추천 도서: '인간 가우디를 만나다' (https://url.kr/cyht49)
+
+---
+
+### 탭 5: 근교 투어 (3곳)
+
+#### 1. 몬세라트 수도원 (Montserrat Monastery)
+
+- **위치**: 바르셀로나에서 약 60km
+- **교통**: Placa Espanya → FGC R5선 → Cremallera(산악열차, 왕복 14.50유로) 또는 Aeri(케이블카, 왕복 14.00유로)
+- **패키지 티켓**:
+  - Tot Montserrat (약 71.50유로): 왕복교통+푸니쿨라+박물관+뷔페식사 올인원
+  - Trans Montserrat (약 43.80유로): 왕복교통+푸니쿨라 (식사/박물관 미포함)
+- **전망대 (Sant Joan 푸니쿨라)**:
+  - 왕복 약 17.00유로
+  - 몬세라트 최고 전망대: 피레네 산맥, 카탈루냐 평원, 맑은 날 지중해 조망
+  - 다양한 하이킹 코스의 출발점
+- **검은 성모상 (La Moreneta)**:
+  - 대성당 오른쪽 입구에서 줄서서 관람 (성모상 손 만지기 전통)
+  - 대기시간: 보통 20~45분, 관광버스 도착 시 1시간+
+  - 매일 13:00 에스콜라니아 소년 합창단 공연 시 대기줄 짧아짐
+  - 어깨/무릎 가리는 복장 권장
+- **Santa Cova 푸니쿨라**: 현재 보수 공사 중 (방문 전 확인 필수)
+- **팁**: 아침 일찍 출발 추천 (오전 8~9시)
+
+#### 2. 지로나 (Girona)
+
+- **위치**: 바르셀로나에서 약 100km
+- **교통**:
+  - AVE/Avant (고속열차): 약 38분, 편도 약 7~12유로 (renfe.com 조기예매 추천)
+  - Media Distancia (일반열차): 약 1시간 20~40분, 편도 약 5~7유로
+- **왕좌의 게임 (Game of Thrones) 촬영지**:
+  - 지로나 대성당 (Catedral de Girona): 시즌 6 '바엘로르 대성전(Great Sept of Baelor)', 제이미 라니스터 말 계단 장면 / 입장 약 7~10유로
+  - 유대인 지구 (El Call): 아리아 스타크 '브라보스(Braavos)' 거리 / 비숍 호셉 카르타나 거리 계단 포토스팟
+  - 아랍 목욕탕 (Banys Arabs): 도른(Dorne) 관련 장면 / 입장 약 3유로
+- **기타 포인트**:
+  - 오냐르 강 컬러풀 하우스 (Cases de l'Onyar): 파스텔톤 건물, 에펠 회사 설계 철제 다리에서 감상
+- **팁**: 도보로 구시가지 전체 반나절~하루 코스, 대성당 계단 포즈 사진 필수
+
+#### 3. 시제스 (Sitges)
+
+- **위치**: 바르셀로나에서 약 35km
+- **교통**:
+  - Renfe Rodalies R2 Sud선: 약 30~37분, 편도 약 5~6유로 (Zone 4)
+  - 배차간격 10~20분, T-Casual 교통권(Zone 4) 사용 가능
+  - Barcelona Sants역 또는 Passeig de Gracia역에서 탑승
+- **추천 해변**:
+  - Platja de la Ribera: 메인 해변, 성당 바로 아래, 가장 인기
+  - Platja de Sant Sebastia: 절벽 위 성당 배경, 시제스에서 가장 포토제닉
+  - Platja de Terramar: 서쪽 끝, 조용하고 한적한 분위기
+- **산트 바르토메우 성당 전망대**:
+  - 바위 곶(La Punta) 위 17세기 성당
+  - Baluard 테라스에서 지중해 파노라마 뷰
+  - 성당 입장 무료, 가이드 투어 시 종탑 360도 전망
+- **구시가지 산책 포인트**:
+  - Passeig Maritim: 약 3km 해변 산책로 (야자수, 모더니즘 빌라, 카페)
+  - Carrer d'en Bosch: 하얀 벽 + 파란 문 + 부겐빌레아 골목
+  - Cau Ferrat·Maricel 미술관: 피카소, 엘 그레코 작품, 바다 전망 갤러리
+- **팁**: 반나절이면 충분, 일몰 시 성당 테라스 석양이 압권
+
+---
+
+### 탭 6: 축제 (크리스마스 시즌, 2025년)
+
+#### 주요 크리스마스 마켓 (3곳)
+
+| # | 장소명 | 위치 | 기간 | 시간 | 핵심 |
+|---|--------|------|------|------|------|
+| 1 | Fira de Santa Llucia | 대성당 앞 Placa Nova | 11/28~12/23 | 10:00~21:00 | 1786년~, 약 200개 부스, 까가네르·티오 데 나달 |
+| 2 | Fira de Nadal | 사그라다 파밀리아 앞 | 11/28~12/23 | 평일 10~21시 / 주말 10~22시 | 성당 배경 낭만 마켓, 수공예품·초콜릿·치즈 |
+| 3 | Moll de la Fusta | 포트벨 항구 | 11/28~2026/1/6 | 공식 홈페이지 참고 | 대관람차, 아이스링크, 푸드트럭, 밤 조명+바다 |
+
+#### 기타 크리스마스 일정 (2곳)
+
+| 이벤트 | 위치 | 기간 |
+|--------|------|------|
+| 산트 자우메 광장 빛·사운드 쇼 | Placa de Sant Jaume | 11/22~1/5 |
+| 전통 구유(Nativity) 전시 | City Hall Coach Houses | 12/13~1/5 |
+
+#### 부가 정보
+
+- 크리스마스 조명 지도: https://www.google.com/maps/d/edit?mid=1VPTRSe1aj0C-ad38BtsvT6uMvXBYvHk
+- 메멘토투어 인스타: https://www.instagram.com/memento_tour/
 
 ---
 
@@ -359,44 +352,38 @@
 
 ### Google Maps 인라인 지도
 
-- 각 장소 카드에 Google Maps Embed를 iframe으로 삽입
-- 구글 지도 단축 URL에서 좌표를 추출하여 `maps.google.com/maps?q=좌표&output=embed` 형태로 임베드
-- 또는 장소명을 쿼리로 사용: `maps.google.com/maps?q=장소명+바르셀로나&output=embed`
-- 지도 위에 오버레이로 "구글 지도에서 보기" 버튼 배치 → 클릭 시 원본 구글 지도 링크로 이동
-- 지도 높이: 모바일 180px / 데스크톱 200px
+- 장소명을 쿼리로 사용: `maps.google.com/maps?q=장소명&output=embed&hl=ko&z=15`
+- `data-q` 속성에 검색어, `data-link` 속성에 원본 지도 URL 저장
+- Intersection Observer로 뷰포트 진입 시 lazy loading (rootMargin: 250px)
+- 지도 위 오버레이 버튼 "Google Maps" → 클릭 시 원본 지도 링크로 이동
+- 지도 높이: 모바일 170px / 태블릿 190px / 데스크톱 200px
 
-### 파일 구조
+### JavaScript 기능 (app.js)
 
-```
-travel/
-├── index.html          # 메인 HTML
-├── css/
-│   └── style.css       # 스타일시트
-├── js/
-│   └── app.js          # 탭 전환, 인터랙션 로직
-└── PROJECT_PROMPT.md   # 이 문서
-```
+1. **탭 전환**: `activate(id)` → 버튼 active/aria-selected, 패널 active/aria-hidden 토글
+2. **인디케이터 슬라이딩**: `moveBar(id)` → getBoundingClientRect로 위치/너비 계산
+3. **키보드 접근성**: ArrowLeft/ArrowRight로 탭 이동
+4. **스티키 그림자**: IntersectionObserver로 히어로 벗어나면 `.is-scrolled` 클래스 추가
+5. **스크롤 탑**: scrollY > 460 시 표시, smooth scroll
+6. **지도 lazy loading**: `scanMaps()` → active 패널의 `[data-q]:not([data-loaded])` 요소 observe → `loadMap()` → iframe 동적 생성
+
+### 배포 (GitHub Actions)
+
+- `.github/workflows/deploy.yml`
+- `push` to `main` 트리거
+- `actions/upload-pages-artifact` + `actions/deploy-pages` 조합
+- 권한: contents:read, pages:write, id-token:write
 
 ### 성능 최적화
 
 - 이미지 없이 CSS 그라데이션/이모지/아이콘으로 비주얼 구성
-- Google Maps iframe은 Intersection Observer로 lazy loading
-- 시스템 폰트 스택 + Google Fonts (Noto Sans KR) 사용
-- CSS/JS 최소화, 단일 페이지로 빠른 로딩
+- Google Maps iframe lazy loading (Intersection Observer)
+- Google Fonts preconnect
+- 시스템 폰트 폴백 스택
 
 ### 접근성
 
-- 시맨틱 HTML (nav, main, section, article)
-- ARIA 탭 패턴 적용
-- 키보드 네비게이션 지원
-- 충분한 색상 대비
-
----
-
-## 추가 고려사항
-
-- 정보 기준일(2025년 12월) 명시
-- 가격 정보는 "약 ~유로" 형태로 변동 가능성 안내
-- 소매치기 주의 등 안전 팁 강조 표시
-- 각 장소의 휴무일 정보 명확히 표기
-- 사그라다 파밀리아 주변 맛집은 별도 섹션 또는 뱃지로 그룹핑
+- 시맨틱 HTML: header, nav, main, section, article, footer
+- ARIA 탭 패턴: role="tablist/tab/tabpanel", aria-selected, aria-hidden, aria-controls
+- 키보드 네비게이션: ArrowLeft/ArrowRight 탭 이동
+- 스크린리더: sr-only 클래스, aria-label
