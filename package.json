@@ -1,0 +1,29 @@
+{
+  "name": "travel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galaxy821/barcelona-travel.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/galaxy821/barcelona-travel/issues"
+  },
+  "homepage": "https://github.com/galaxy821/barcelona-travel#readme",
+  "dependencies": {
+    "@astrojs/react": "^5.0.3",
+    "astro": "^6.1.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

@@ -1,0 +1,113 @@
+---
+interface Props {
+  title: string;
+  activeTab: string;
+}
+const { title, activeTab } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const tabs = [
+  { id: 'accommodation', path: '', emoji: '🏨', label: '숙소' },
+  { id: 'attractions', path: 'attractions/', emoji: '📍', label: '가볼만한 곳' },
+  { id: 'restaurants', path: 'restaurants/', emoji: '🍽️', label: '식당' },
+  { id: 'shopping', path: 'shopping/', emoji: '🛍️', label: '쇼핑' },
+  { id: 'daytrips', path: 'daytrips/', emoji: '🚌', label: '근교 투어' },
+  { id: 'festivals', path: 'festivals/', emoji: '🎄', label: '축제' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content="2025년 12월 기준, 실제 여행 경험 기반 바르셀로나 여행 꿀팁 가이드" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero__inner">
+      <div class="hero__tag">🇪🇸 SPAIN &middot; BARCELONA</div>
+      <h1 class="hero__title">Barcelona Travel<br/>Information : 2025 ver</h1>
+      <p class="hero__desc">실제 여행 경험을 기반으로 정리한 바르셀로나 여행 꿀팁 가이드</p>
+      <p class="hero__date"><i class="fa-regular fa-calendar"></i> 2025년 12월 기준 &middot; 가격/운영시간은 변동될 수 있습니다</p>
+    </div>
+  </header>
+
+  <!-- TAB NAV -->
+  <nav class="tab-nav-wrap" aria-label="콘텐츠 탭">
+    <div class="tab-nav" role="tablist">
+      {tabs.map((tab) => (
+        <a
+          href={`${base}${tab.path}`}
+          class={`tab-btn${activeTab === tab.id ? ' active' : ''}`}
+          role="tab"
+          aria-selected={activeTab === tab.id ? 'true' : 'false'}
+        >
+          <span class="tab-btn__icon">{tab.emoji}</span><span>{tab.label}</span>
+        </a>
+      ))}
+      <div class="tab-indicator"></div>
+    </div>
+  </nav>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <div class="panel active">
+      <slot />
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>2025년 12월 기준 정보입니다. 가격 및 운영시간은 변동될 수 있으니 방문 전 확인해주세요.</p>
+    <p style="margin-top:6px;">Barcelona Travel Information : 2025 ver</p>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="to-top" aria-label="맨 위로 이동"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script>
+    // Tab indicator
+    function moveBar() {
+      const nav = document.querySelector('.tab-nav');
+      const bar = document.querySelector('.tab-indicator');
+      const activeBtn = document.querySelector('.tab-btn.active');
+      if (!nav || !bar || !activeBtn) return;
+      const bR = activeBtn.getBoundingClientRect();
+      const pR = nav.getBoundingClientRect();
+      bar.style.left = (bR.left - pR.left) + 'px';
+      bar.style.width = bR.width + 'px';
+    }
+    moveBar();
+    window.addEventListener('resize', moveBar);
+
+    // Sticky shadow
+    const hero = document.getElementById('hero');
+    const wrap = document.querySelector('.tab-nav-wrap');
+    if (hero && wrap) {
+      new IntersectionObserver(([e]) => {
+        wrap.classList.toggle('is-scrolled', !e.isIntersecting);
+      }, { threshold: 0, rootMargin: '-1px 0px 0px 0px' }).observe(hero);
+    }
+
+    // Scroll top
+    const toTop = document.querySelector('.to-top');
+    if (toTop) {
+      window.addEventListener('scroll', () => {
+        toTop.classList.toggle('show', window.scrollY > 460);
+      }, { passive: true });
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+  </script>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

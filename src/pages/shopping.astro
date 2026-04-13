@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.jsx';
+import shopping from '../data/shopping.js';
+
+const categories = ['olive', 'fashion', 'food', 'pharmacy'];
+const totalCount = categories.reduce((sum, key) => sum + shopping[key].items.length, 0);
+---
+
+<Layout title="쇼핑 - Barcelona Travel Guide 2025" activeTab="shopping">
+  <div class="sec-head">
+    <h2 class="sec-head__title">쇼핑 리스트</h2>
+    <p class="sec-head__sub">바르셀로나에서 꼭 사와야 할 기념품 &amp; 쇼핑 스팟 {totalCount}곳</p>
+  </div>
+
+  {categories.map((key) => {
+    const cat = shopping[key];
+    return (
+      <>
+        <h3 class="sub-label">
+          <i class={`fa-solid ${cat.labelIcon}`}></i> {cat.label}
+        </h3>
+        <div class="grid">
+          {cat.items.map((item, i) => (
+            <Card client:visible data={item} />
+          ))}
+        </div>
+      </>
+    );
+  })}
+
+  <div class="highlight-box" style="margin-top: 28px;" set:html={`<strong><i class="fa-solid fa-circle-info"></i> 쇼핑 참고사항</strong><br>${shopping.note}`} />
+</Layout>

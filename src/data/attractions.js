@@ -1,0 +1,155 @@
+const attractions = [
+  {
+    name: '에스파냐 광장',
+    nameEn: 'Placa Reial',
+    badge: { type: 'free', icon: 'fa-ticket', text: '무료' },
+    address: 'Pl. Reial, 10, Ciutat Vella, 08002 Barcelona',
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>가우디의 가로등 작품</strong>을 볼 수 있는 아름다운 광장' },
+      { icon: 'warn', faIcon: 'fa-triangle-exclamation', html: '광장 내 식당은 가격이 비싸서 <strong>식사는 비추천</strong>' },
+    ],
+    map: { q: 'Plaça Reial Barcelona', link: 'https://maps.app.goo.gl/Vy94BoweoUtxaYsV7' },
+  },
+  {
+    name: '바르셀로나 대성당',
+    nameEn: 'Cathedral of Barcelona',
+    address: 'Pla de la Seu, s/n, Ciutat Vella, 08002 Barcelona',
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>고딕 양식</strong>의 웅장한 대성당' },
+      { icon: 'price', faIcon: 'fa-coins', html: '무료 입장 (특별 구역 유료, 약 <strong>9유로</strong>)' },
+    ],
+    map: { q: 'Cathedral of Barcelona', link: 'https://maps.app.goo.gl/ruj7SfydoB28Hsfx6' },
+  },
+  {
+    name: '카탈루냐 음악당',
+    nameEn: 'Palau de la Musica Catalana',
+    address: 'C/ Palau de la Musica, 4-6, Ciutat Vella, 08003 Barcelona',
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>유네스코 세계문화유산</strong>, 화려한 스테인드글라스가 인상적' },
+      { icon: 'price', faIcon: 'fa-coins', html: '가이드 투어 약 <strong>20유로</strong>' },
+    ],
+    map: { q: 'Palau de la Musica Catalana Barcelona', link: 'https://maps.app.goo.gl/sgN3tda35TogsMoPA' },
+  },
+  {
+    name: '카사 바트요',
+    nameEn: 'Casa Batllo',
+    badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
+    address: 'Pg. de Gracia, 43, Eixample, 08007 Barcelona',
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>투어를 통해 방문 추천</strong>. 아침 일찍 입장하면 대기줄 없이 입장 가능' },
+      { icon: 'price', faIcon: 'fa-coins', html: '약 <strong>35유로~</strong> (온라인 사전 예매 추천)' },
+      { icon: 'warn', faIcon: 'fa-triangle-exclamation', html: '기념품점 구경하기 좋지만 가격이 비싼 편' },
+    ],
+    map: { q: 'Casa Batllo Barcelona', link: 'https://maps.app.goo.gl/wMD9o7pQkXgNDW6E9' },
+  },
+  {
+    name: '카사 밀라',
+    nameEn: 'Casa Mila / La Pedrera',
+    badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
+    address: 'Pg. de Gracia, 92, Eixample, 08008 Barcelona',
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '한국인 투어에서 <strong>내부 관람을 빼는 경우가 많으므로 개별 방문 추천</strong>' },
+      { icon: 'tip', faIcon: 'fa-binoculars', html: '<strong>옥상에서 사그라다 파밀리아 성당 조망 가능</strong>' },
+      { icon: 'price', faIcon: 'fa-coins', html: '약 <strong>25유로~</strong> (온라인 사전 예매 추천)' },
+    ],
+    map: { q: 'Casa Mila La Pedrera Barcelona', link: 'https://maps.app.goo.gl/dVpC4BJR9XFpmCNeA' },
+  },
+  {
+    name: '구엘 공원',
+    nameEn: 'Park Guell',
+    badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
+    address: 'Gracia, 08024 Barcelona',
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '버스로 한 번에 이동 가능 (<strong>투어 관광버스가 더 편함</strong>). 공원이 넓어서 구석구석 구경하기 좋고, 고지대라 <strong>시내 전경 조망</strong> 가능' },
+      { icon: 'price', faIcon: 'fa-coins', html: '약 <strong>10유로</strong> (온라인 사전 예매 필수)' },
+    ],
+    highlight: {
+      html: `<strong><i class="fa-solid fa-mountain-sun"></i> 전망 추천!</strong> 시내를 완전히 내려다보고 싶다면 <strong>벙커(Turo de la Rovira)</strong> 추천<br><a href="https://maps.app.goo.gl/weR9UuegK71s7Bzx8" target="_blank" rel="noopener"><i class="fa-solid fa-map-location-dot"></i> 벙커 위치 보기</a>`,
+    },
+    map: { q: 'Park Guell Barcelona', link: 'https://maps.app.goo.gl/mYAFUvqUXgGzpuQs6' },
+  },
+  {
+    name: '사그라다 파밀리아',
+    nameEn: 'Basilica de la Sagrada Familia',
+    badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
+    address: 'Carrer de Mallorca, 401, Eixample, 08013 Barcelona',
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '바르셀로나 <strong>필수 관광명소</strong>. <strong>실내 구경 강력 추천!</strong> 투어에서 실내 미포함인 경우 많으므로 별도 티켓 예약 추천' },
+      { icon: 'warn', faIcon: 'fa-triangle-exclamation', html: '사람이 매우 많고 <strong>소매치기 주의!</strong>' },
+      { icon: 'price', faIcon: 'fa-coins', html: '약 <strong>26유로~</strong> (온라인 사전 예매 필수, 타워 포함 시 36유로~)' },
+    ],
+    map: { q: 'Sagrada Familia Barcelona', link: 'https://maps.app.goo.gl/6xEVkPi8RdEWawiq8' },
+  },
+  {
+    name: '구엘 저택',
+    nameEn: 'Palau Guell',
+    badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
+    address: 'Carrer Nou de la Rambla, 3-5, Ciutat Vella, 08001 Barcelona',
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>실내 구경 추천</strong>. 가우디 초기 작품의 정수를 볼 수 있는 저택' },
+      { icon: 'price', faIcon: 'fa-coins', html: '약 <strong>12유로</strong>' },
+    ],
+    map: { q: 'Palau Guell Barcelona', link: 'https://maps.app.goo.gl/d5VCkQEdvy35r4JV6' },
+  },
+  {
+    name: '몬주익 마법의 분수',
+    nameEn: 'Font Magica de Montjuic',
+    badge: { type: 'free', icon: 'fa-ticket', text: '무료' },
+    address: 'Pl. de Carles Buigas, Sants-Montjuic, 08038 Barcelona',
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '음악과 조명에 맞춰 물줄기가 춤추는 <strong>환상적인 분수 쇼</strong> (약 15분)' },
+    ],
+    schedule: [
+      { season: '동절기 (11~2월)', days: '목 / 금 / 토', time: '20:00~21:00' },
+      { season: '춘추절기 (3~5월, 10월)', days: '목 / 금 / 토', time: '21:00~22:00' },
+      { season: '하절기 (6~9월)', days: '수~일', time: '21:30~22:30' },
+    ],
+    highlight: {
+      html: `<strong><i class="fa-solid fa-star"></i> 관람 팁</strong><br>&middot; 분수 <strong>정면 계단</strong>에서 보는 것이 가장 좋은 뷰<br>&middot; 최소 <strong>30분 전</strong>에 도착하여 정면 자리 확보 추천<br>&middot; 15분 간격으로 공연, 카메라보다 눈으로 감상 추천<br>&middot; <em>시즌별 변동 가능 - 바르셀로나 시 공식 사이트에서 사전 확인 권장</em>`,
+    },
+    map: { q: 'Font Magica de Montjuic Barcelona', link: 'https://maps.app.goo.gl/bGQB4sKj52jERU7B8' },
+  },
+  {
+    name: '몬주익 성',
+    nameEn: 'Castell de Montjuic',
+    address: 'Ctra. de Montjuic, 66, Sants-Montjuic, 08038 Barcelona',
+    route: {
+      title: '추천 루트 (케이블카 이용)',
+      steps: [
+        { icon: 'fa-train-subway', text: 'L3 Paral·lel역' },
+        { icon: 'fa-cable-car', text: '푸니쿨라 (무료)' },
+        { icon: 'fa-cable-car', text: '텔레페릭' },
+        { icon: 'fa-fort-awesome', text: '몬주익 성' },
+      ],
+    },
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>텔레페릭 데 몬주익</strong>: 몬주익 공원 중턱 &rarr; 정상 구간 운행<br>&middot; 운행시간: 10:00~19:00 (시즌별 변동)<br>&middot; 요금: 편도 약 9.40유로 / 왕복 약 14.20유로<br>&middot; 푸니쿨라는 T-Casual 교통권 사용 가능' },
+      { icon: 'note', faIcon: 'fa-person-hiking', html: '내려올 때는 <strong>도보로 산책하며 내려오는 것도 추천</strong>' },
+      { icon: 'price', faIcon: 'fa-coins', html: '입장료 약 <strong>5유로</strong> (일요일 15시 이후 무료, 매월 첫째 일요일 종일 무료)' },
+    ],
+    map: { q: 'Castell de Montjuic Barcelona', link: 'https://maps.app.goo.gl/U9njvq2VXLhXgu8h6' },
+  },
+  {
+    name: '티비다보 놀이공원',
+    nameEn: "Parc d'Atraccions Tibidabo",
+    address: "Parc d'atraccions Tibidabo, Barcelona",
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>시간 여유가 있다면 방문 추천</strong>. 바르셀로나 최고 전망을 자랑하는 놀이공원' },
+      { icon: 'price', faIcon: 'fa-coins', html: '약 <strong>35유로</strong>' },
+    ],
+    map: { q: 'Tibidabo Amusement Park Barcelona', link: 'https://maps.app.goo.gl/cAs1dF7Egoexysy7A' },
+  },
+  {
+    name: '까사 비센스',
+    nameEn: 'Casa Vicens Gaudí',
+    badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
+    address: 'Carrer de les Carolines, 20-26, Gràcia, 08012 Barcelona',
+    info: [
+      { icon: 'tip', faIcon: 'fa-lightbulb', html: '안토니 가우디가 설계한 웅장한 4층 주택은 <strong>무어인의 영향</strong>을 받았으며 모서리에는 탑이 돌출되어 있습니다' },
+      { icon: 'tip', faIcon: 'fa-camera', html: '<strong>박물관인데 외관이 이쁨</strong>' },
+    ],
+    map: { q: 'Casa Vicens Gaudí Barcelona', link: 'https://maps.app.goo.gl/EVhy5GbX9WjLsvEC7' },
+  },
+];
+
+export default attractions;

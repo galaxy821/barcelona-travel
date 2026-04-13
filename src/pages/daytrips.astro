@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.jsx';
+import daytrips from '../data/daytrips.js';
+---
+
+<Layout title="근교 투어 - Barcelona Travel Guide 2025" activeTab="daytrips">
+  <div class="sec-head">
+    <h2 class="sec-head__title">근교 투어</h2>
+    <p class="sec-head__sub">바르셀로나에서 당일치기로 다녀올 수 있는 근교 관광지 {daytrips.length}곳</p>
+  </div>
+  <div class="grid grid--single">
+    {daytrips.map((item, i) => (
+      <Card client:visible data={item} />
+    ))}
+  </div>
+</Layout>

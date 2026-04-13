@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.jsx';
+import accommodations from '../data/accommodations.js';
+---
+
+<Layout title="숙소 - Barcelona Travel Guide 2025" activeTab="accommodation">
+  <div class="sec-head">
+    <h2 class="sec-head__title">추천 숙소</h2>
+    <p class="sec-head__sub">바르셀로나 구시가지 중심, 도보 여행에 최적화된 숙소 2곳</p>
+  </div>
+  <div class="grid">
+    {accommodations.map((item, i) => (
+      <Card client:visible data={item} />
+    ))}
+  </div>
+</Layout>
