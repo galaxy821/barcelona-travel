@@ -114,6 +114,11 @@ const LazyMap = ({ map }) => {
 
 const Card = ({ data }) => (
   <article className="card">
+    {data.image && (
+      <div className="card__img">
+        <img src={data.image} alt={data.name} loading="lazy" referrerPolicy="no-referrer" />
+      </div>
+    )}
     <div className="card__body">
       {/* Header */}
       <div className="card__top">
