@@ -2,6 +2,7 @@ const attractions = [
   {
     name: '에스파냐 광장',
     nameEn: 'Placa Reial',
+    visited: true,
     badge: { type: 'free', icon: 'fa-ticket', text: '무료' },
     address: 'Pl. Reial, 10, Ciutat Vella, 08002 Barcelona',
     info: [
@@ -13,6 +14,7 @@ const attractions = [
   {
     name: '바르셀로나 대성당',
     nameEn: 'Cathedral of Barcelona',
+    visited: true,
     address: 'Pla de la Seu, s/n, Ciutat Vella, 08002 Barcelona',
     info: [
       { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>고딕 양식</strong>의 웅장한 대성당' },
@@ -33,6 +35,7 @@ const attractions = [
   {
     name: '카사 바트요',
     nameEn: 'Casa Batllo',
+    visited: true,
     badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
     address: 'Pg. de Gracia, 43, Eixample, 08007 Barcelona',
     info: [
@@ -45,6 +48,7 @@ const attractions = [
   {
     name: '카사 밀라',
     nameEn: 'Casa Mila / La Pedrera',
+    visited: true,
     badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
     address: 'Pg. de Gracia, 92, Eixample, 08008 Barcelona',
     info: [
@@ -57,6 +61,7 @@ const attractions = [
   {
     name: '구엘 공원',
     nameEn: 'Park Guell',
+    visited: true,
     badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
     address: 'Gracia, 08024 Barcelona',
     info: [
@@ -71,6 +76,7 @@ const attractions = [
   {
     name: '사그라다 파밀리아',
     nameEn: 'Basilica de la Sagrada Familia',
+    visited: true,
     badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
     address: 'Carrer de Mallorca, 401, Eixample, 08013 Barcelona',
     info: [
@@ -83,6 +89,7 @@ const attractions = [
   {
     name: '구엘 저택',
     nameEn: 'Palau Guell',
+    visited: true,
     badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
     address: 'Carrer Nou de la Rambla, 3-5, Ciutat Vella, 08001 Barcelona',
     info: [

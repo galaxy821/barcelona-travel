@@ -2,6 +2,7 @@ const daytrips = [
   {
     name: '몬세라트 수도원',
     nameEn: 'Montserrat Monastery',
+    visited: true,
     badge: { type: 'rec', icon: 'fa-thumbs-up', text: '필수' },
     address: 'Montserrat, 08199 Barcelona (바르셀로나에서 약 60km)',
     route: {

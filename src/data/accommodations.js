@@ -2,6 +2,7 @@ const accommodations = [
   {
     name: '호스텔 베니돔',
     nameEn: 'Hostel Benidorm',
+    visited: true,
     badge: { type: 'rec', icon: 'fa-thumbs-up', text: '추천' },
     address: 'Rambla dels Caputxins, 37, Ciutat Vella, 08002 Barcelona',
     info: [
@@ -13,6 +14,7 @@ const accommodations = [
   {
     name: '오스탈 이즈나하르 바르셀로나',
     nameEn: 'Hostal Iznajar Barcelona',
+    visited: true,
     address: 'Carrer del Carme, 38, Ciutat Vella, 08001 Barcelona',
     info: [
       { icon: 'tip', faIcon: 'fa-lightbulb', html: '트윈룸 크기 작고 호스텔 베니돔보다 오래된 느낌이지만 체크인 수월. Liceu 역 근처이며 <strong>라보케리아 시장이 바로 코앞</strong>. 까르푸도 가까움' },

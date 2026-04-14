@@ -6,6 +6,7 @@ const shopping = {
       {
         name: 'La Chinata',
         nameEn: '올리브 오일 전문점',
+        visited: true,
         badge: { type: 'rec', icon: 'fa-thumbs-up', text: '필수' },
         address: '바르셀로나 내 여러 지점 운영',
         info: [
@@ -41,6 +42,7 @@ const shopping = {
       {
         name: '사바테르',
         nameEn: 'Sabater Hnos. - 수제 비누',
+        visited: true,
         address: 'Placa de Sant Felip Neri, 1, Ciutat Vella, 08002 Barcelona',
         info: [
           { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>삼대가 내려온 가족 가게</strong>. 올리브 오일 70%와 코코넛 오일 30% 등 자연적인 재료로 제작. 고딕지구에 위치하며 선물용으로 구매하기 좋음' },
@@ -50,6 +52,7 @@ const shopping = {
       {
         name: 'Cereria Subira',
         nameEn: '양초 전문점 (1761년~)',
+        visited: true,
         address: 'Baixada de la Llibreteria, 7, Ciutat Vella, 08002 Barcelona',
         info: [
           { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>1761년부터 이어온 바르셀로나에서 가장 오래된 양초집</strong>. 사그라다 파밀리아 성당에 양초를 납품하는 유서 깊은 가게. <strong>사그라다 파밀리아 실루엣 촛대</strong> 추천' },
@@ -145,6 +148,7 @@ const shopping = {
       {
         name: 'El Corte Ingles',
         nameEn: 'Placa de Catalunya',
+        visited: true,
         address: 'Pl. de Catalunya, 14, Eixample, 08002 Barcelona',
         info: [
           { icon: 'tip', faIcon: 'fa-lightbulb', html: '카탈루냐 광장 앞 스페인 독점 백화점. <strong>지하 식품관</strong>에 슈퍼마켓과 고메마켓이 있음' },

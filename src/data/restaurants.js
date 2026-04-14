@@ -2,6 +2,7 @@ const restaurants = {
   main: [
     {
       name: 'Bar Anxoita',
+      visited: true,
       badge: { type: 'rec', icon: 'fa-fire', text: '꿀대구' },
       address: 'Carrer de Mallorca, 250, Eixample, 08008 Barcelona',
       info: [
@@ -12,6 +13,7 @@ const restaurants = {
     },
     {
       name: 'Vinitus',
+      visited: true,
       badge: { type: 'rec', icon: 'fa-fire', text: '꿀대구' },
       address: 'Carrer del Consell de Cent, 333, Eixample, 08007 Barcelona',
       info: [
@@ -23,6 +25,7 @@ const restaurants = {
     {
       name: '라보케리아 시장',
       nameEn: 'Mercat de la Boqueria',
+      visited: true,
       address: 'La Rambla, 91, Ciutat Vella, 08001 Barcelona',
       info: [
         { icon: 'tip', faIcon: 'fa-lightbulb', html: '바르셀로나 대표 재래시장. 신선한 <strong>과일, 해산물, 타파스</strong>를 즐길 수 있는 곳' },
@@ -32,6 +35,7 @@ const restaurants = {
     {
       name: 'Makamaka',
       nameEn: 'Barcelona',
+      visited: true,
       address: 'Pg. de Joan de Borbo, 76, Ciutat Vella, 08039 Barcelona',
       info: [
         { icon: 'menu', faIcon: 'fa-utensils', html: '<strong>수제 버거</strong> 맛집' },
@@ -171,6 +175,7 @@ const restaurants = {
     {
       name: 'Bilmonte',
       nameEn: '아이스크림',
+      visited: true,
       address: 'Carrer del Consell de Cent, 282, Eixample, 08007 Barcelona',
       info: [
         { icon: 'menu', faIcon: 'fa-ice-cream', html: '<strong>아이스크림</strong> 전문점' },

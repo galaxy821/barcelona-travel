@@ -121,7 +121,10 @@ const Card = ({ data }) => (
           {data.name}
           {data.nameEn && <small>{data.nameEn}</small>}
         </h3>
-        <Badge badge={data.badge} />
+        <div className="card__badges">
+          {data.visited && <span className="badge badge--visited"><i className="fa-solid fa-check"></i> sangsang 방문</span>}
+          <Badge badge={data.badge} />
+        </div>
       </div>
 
       {/* Address */}

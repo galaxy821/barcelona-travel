@@ -330,6 +330,17 @@ button { font-family: inherit; }
 .badge--star    { background: #FFF7E5; color: #B38600; }
 .badge--free    { background: #EAF1FF; color: var(--c-info); }
 
+/* visited badge */
+.badge--visited { background: #E7F5ED; color: var(--c-success); }
+
+/* badge group */
+.card__badges {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+}
+
 /* address */
 .card__addr {
   display: flex;
