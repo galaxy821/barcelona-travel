@@ -52,7 +52,7 @@ const attractions = [
   {
     name: '카사 밀라',
     nameEn: 'Casa Mila / La Pedrera',
-    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Casa_Mil%25C3%25A0_-_Barcelona%252C_Spain_-_Jan_2007.jpg/800px-Casa_Mil%25C3%25A0_-_Barcelona%252C_Spain_-_Jan_2007.jpg&n=-1',
+    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/3/3c/Casa_Mil%C3%A0_-_Barcelona%2C_Spain_-_Jan_2007.jpg&n=-1',
     visited: true,
     badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
     address: 'Pg. de Gracia, 92, Eixample, 08008 Barcelona',
@@ -82,7 +82,7 @@ const attractions = [
   {
     name: '사그라다 파밀리아',
     nameEn: 'Basilica de la Sagrada Familia',
-    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Sagrada_Familia_%2528Barcelona%2529.JPG/800px-Sagrada_Familia_%2528Barcelona%2529.JPG&n=-1',
+    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/6/6a/Sagrada_Familia_%28Barcelona%29.JPG&n=-1',
     visited: true,
     badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
     address: 'Carrer de Mallorca, 401, Eixample, 08013 Barcelona',
@@ -96,7 +96,7 @@ const attractions = [
   {
     name: '구엘 저택',
     nameEn: 'Palau Guell',
-    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Palau_G%25C3%25BCell_-_Fa%25C3%25A7ana.JPG/800px-Palau_G%25C3%25BCell_-_Fa%25C3%25A7ana.JPG&n=-1',
+    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/1/1a/Palau_G%C3%BCell_-_Fa%C3%A7ana.JPG&n=-1',
     visited: true,
     badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
     address: 'Carrer Nou de la Rambla, 3-5, Ciutat Vella, 08001 Barcelona',
@@ -109,7 +109,7 @@ const attractions = [
   {
     name: '몬주익 마법의 분수',
     nameEn: 'Font Magica de Montjuic',
-    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Font_Magica_de_Montjuic_BCN_04_2016_7242.jpg/800px-Font_Magica_de_Montjuic_BCN_04_2016_7242.jpg&n=-1',
+    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/7/7e/Font_Magica_de_Montjuic_BCN_04_2016_7242.jpg&n=-1',
     badge: { type: 'free', icon: 'fa-ticket', text: '무료' },
     address: 'Pl. de Carles Buigas, Sants-Montjuic, 08038 Barcelona',
     info: [
@@ -128,7 +128,7 @@ const attractions = [
   {
     name: '몬주익 성',
     nameEn: 'Castell de Montjuic',
-    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Castell_de_Montjuic._Barcelona.jpg/800px-Castell_de_Montjuic._Barcelona.jpg&n=-1',
+    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/c/ca/Castell_de_Montjuic._Barcelona.jpg&n=-1',
     address: 'Ctra. de Montjuic, 66, Sants-Montjuic, 08038 Barcelona',
     route: {
       title: '추천 루트 (케이블카 이용)',
@@ -149,7 +149,7 @@ const attractions = [
   {
     name: '티비다보 놀이공원',
     nameEn: "Parc d'Atraccions Tibidabo",
-    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Sarri%25C3%25A0_-_Tibidabo_lunapark_la_ruota_1441.JPG/800px-Sarri%25C3%25A0_-_Tibidabo_lunapark_la_ruota_1441.JPG&n=-1',
+    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/f/f9/Sarri%C3%A0_-_Tibidabo_lunapark_la_ruota_1441.JPG&n=-1',
     address: "Parc d'atraccions Tibidabo, Barcelona",
     info: [
       { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>시간 여유가 있다면 방문 추천</strong>. 바르셀로나 최고 전망을 자랑하는 놀이공원' },
@@ -160,7 +160,7 @@ const attractions = [
   {
     name: '까사 비센스',
     nameEn: 'Casa Vicens Gaudí',
-    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Gaud%25C3%25AD_-_Casa_Vicens.JPG/800px-Gaud%25C3%25AD_-_Casa_Vicens.JPG&n=-1',
+    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/c/cc/Gaud%C3%AD_-_Casa_Vicens.JPG&n=-1',
     badge: { type: 'gaudi', icon: 'fa-palette', text: '가우디' },
     address: 'Carrer de les Carolines, 20-26, Gràcia, 08012 Barcelona',
     info: [
