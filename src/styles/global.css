@@ -264,12 +264,15 @@ button { font-family: inherit; }
 }
 
 /* ==============================================
-   CARD GRID (Bento)
+   CARD GRID (Masonry / Pinterest)
    ============================================== */
 .grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
+  columns: 1;
+  column-gap: 18px;
+}
+.grid > * {
+  break-inside: avoid;
+  margin-bottom: 18px;
 }
 
 /* ==============================================
@@ -609,8 +612,9 @@ button { font-family: inherit; }
     padding: 15px 8px 13px;
   }
 
-  .grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .grid--single { grid-template-columns: 1fr; }
+  .grid { columns: 2; column-gap: 22px; }
+  .grid > * { margin-bottom: 22px; }
+  .grid--single { columns: 1; }
   .card__map { height: 190px; }
   .card__body { padding: 24px; }
   .content { padding: 36px 28px 90px; }
@@ -620,8 +624,9 @@ button { font-family: inherit; }
 @media (min-width: 1024px) {
   .hero { min-height: 480px; }
 
-  .grid { gap: 26px; }
-  .grid--wide { grid-template-columns: repeat(3, 1fr); }
+  .grid { column-gap: 26px; }
+  .grid > * { margin-bottom: 26px; }
+  .grid--wide { columns: 3; }
   .card__body { padding: 26px; }
   .card__map { height: 200px; }
   .content { padding: 44px 36px 110px; }
@@ -629,7 +634,7 @@ button { font-family: inherit; }
 
 /* Wide 1280+ */
 @media (min-width: 1280px) {
-  .grid--wide { grid-template-columns: repeat(3, 1fr); }
+  .grid--wide { columns: 3; }
 }
 
 /* ==============================================
