@@ -52,7 +52,7 @@ const shopping = {
       {
         name: 'Cereria Subira',
         nameEn: '양초 전문점 (1761년~)',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Cereria_Subir%C3%A0%2C_fa%C3%A7ana.jpg?width=800',
+        image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/9/90/Cereria_Subir%C3%A0%2C_fa%C3%A7ana.jpg&w=800&n=-1',
         visited: true,
         address: 'Baixada de la Llibreteria, 7, Ciutat Vella, 08002 Barcelona',
         info: [
@@ -106,7 +106,7 @@ const shopping = {
       {
         name: 'Torrons Vicens',
         nameEn: '스페인 누가 뚜론 (1775년~)',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Torrons_Vicens_in_Barcelona.jpg?width=800',
+        image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/3/3e/Torrons_Vicens_in_Barcelona.jpg&w=800&n=-1',
         address: 'Pl. de la Universitat, 5, Ciutat Vella, 08007 Barcelona',
         info: [
           { icon: 'tip', faIcon: 'fa-lightbulb', html: '<strong>1775년부터 시작된 가족 기업</strong>. 기념품 초콜릿 판매. 구글지도에서 가게 이름을 검색하여 가까운 가게를 방문' },
@@ -150,7 +150,7 @@ const shopping = {
       {
         name: 'El Corte Ingles',
         nameEn: 'Placa de Catalunya',
-        image: 'https://commons.wikimedia.org/wiki/Special:FilePath/El_Corte_Ingl%C3%A9s_(Pla%C3%A7a_Catalunya)_-_Barcelona_2014.JPG?width=800',
+        image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/e/e2/El_Corte_Ingl%C3%A9s_%28Pla%C3%A7a_Catalunya%29_-_Barcelona_2014.JPG&w=800&n=-1',
         visited: true,
         address: 'Pl. de Catalunya, 14, Eixample, 08002 Barcelona',
         info: [

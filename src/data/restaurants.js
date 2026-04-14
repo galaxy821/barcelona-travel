@@ -25,7 +25,7 @@ const restaurants = {
     {
       name: '라보케리아 시장',
       nameEn: 'Mercat de la Boqueria',
-      image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mercat_de_la_Boqueria_(Barcelona)_-_1.jpg?width=800',
+      image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/0/0e/Mercat_de_la_Boqueria_%28Barcelona%29_-_1.jpg&w=800&n=-1',
       visited: true,
       address: 'La Rambla, 91, Ciutat Vella, 08001 Barcelona',
       info: [

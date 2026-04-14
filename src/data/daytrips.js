@@ -2,7 +2,7 @@ const daytrips = [
   {
     name: '몬세라트 수도원',
     nameEn: 'Montserrat Monastery',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Monestir_de_Montserrat%2C_Spain_(Unsplash).jpg?width=800',
+    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/5/52/Monestir_de_Montserrat%2C_Spain_%28Unsplash%29.jpg&w=800&n=-1',
     visited: true,
     badge: { type: 'rec', icon: 'fa-thumbs-up', text: '필수' },
     address: 'Montserrat, 08199 Barcelona (바르셀로나에서 약 60km)',
@@ -44,7 +44,7 @@ const daytrips = [
   {
     name: '지로나',
     nameEn: 'Girona',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Girona_Cathedral_2020.jpg?width=800',
+    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/1/1c/Girona_Cathedral_2020.jpg&w=800&n=-1',
     badge: { type: 'star', icon: 'fa-star', text: '왕좌의 게임' },
     address: 'Girona (바르셀로나에서 약 100km)',
     route: {
@@ -84,7 +84,7 @@ const daytrips = [
   {
     name: '시제스',
     nameEn: 'Sitges',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Beach_Sitges_Spain.jpg?width=800',
+    image: 'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/a/a4/Beach_Sitges_Spain.jpg&w=800&n=-1',
     badge: { type: 'free', icon: 'fa-umbrella-beach', text: '해변' },
     address: 'Sitges (바르셀로나에서 약 35km)',
     route: {

@@ -66,46 +66,49 @@ const ScheduleTable = ({ schedule }) => {
 };
 
 const LazyMap = ({ map }) => {
-  const ref = useRef(null);
+  const contentRef = useRef(null);
+  const [expanded, setExpanded] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    if (!ref.current || !map?.q) return;
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setLoaded(true);
-        obs.disconnect();
-      }
-    }, { rootMargin: '250px 0px', threshold: 0 });
-    obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, [map]);
+  const handleToggle = () => {
+    if (!expanded) setLoaded(true);
+    setExpanded(prev => !prev);
+  };
 
   if (!map) return null;
 
   return (
-    <div className="card__map" ref={ref}>
-      {!loaded && (
-        <div className="card__map-ph">
-          <i className="fa-solid fa-map-location-dot"></i>
-          <span>지도 보기</span>
+    <div className="card__map-wrap">
+      <button className="card__map-toggle" onClick={handleToggle} aria-expanded={expanded}>
+        <i className="fa-solid fa-map-location-dot"></i>
+        <span>Google 지도 보기</span>
+        <i className={`fa-solid fa-chevron-down card__map-arrow ${expanded ? 'card__map-arrow--up' : ''}`}></i>
+      </button>
+      <div
+        className="card__map-collapsible"
+        style={{
+          height: expanded ? 200 : 0,
+          opacity: expanded ? 1 : 0,
+        }}
+      >
+        <div className="card__map" ref={contentRef}>
+          {loaded && (
+            <iframe
+              src={`https://maps.google.com/maps?q=${encodeURIComponent(map.q)}&output=embed&hl=ko&z=15`}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+              title={`${map.q} map`}
+              style={{ width: '100%', height: '100%', border: 0, display: 'block' }}
+            />
+          )}
+          {map.link && expanded && (
+            <a href={map.link} target="_blank" rel="noopener noreferrer" className="map-link">
+              <i className="fa-solid fa-up-right-from-square"></i> Google Maps
+            </a>
+          )}
         </div>
-      )}
-      {loaded && (
-        <iframe
-          src={`https://maps.google.com/maps?q=${encodeURIComponent(map.q)}&output=embed&hl=ko&z=15`}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-          title={`${map.q} map`}
-          style={{ width: '100%', height: '100%', border: 0, display: 'block' }}
-        />
-      )}
-      {map.link && (
-        <a href={map.link} target="_blank" rel="noopener noreferrer" className="map-link">
-          <i className="fa-solid fa-up-right-from-square"></i> Google Maps
-        </a>
-      )}
+      </div>
     </div>
   );
 };
