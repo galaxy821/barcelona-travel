@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.jsx';
+import MasonryGrid from '../components/MasonryGrid.jsx';
 import attractions from '../data/attractions.js';
 ---
 
@@ -9,9 +9,5 @@ import attractions from '../data/attractions.js';
     <h2 class="sec-head__title">가볼만한 곳</h2>
     <p class="sec-head__sub">가우디 건축부터 전망 명소까지, 바르셀로나 필수 관광지 {attractions.length}곳</p>
   </div>
-  <div class="grid grid--wide">
-    {attractions.map((item, i) => (
-      <Card client:visible data={item} />
-    ))}
-  </div>
+  <MasonryGrid client:visible items={attractions} wide={true} />
 </Layout>

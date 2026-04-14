@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.jsx';
+import MasonryGrid from '../components/MasonryGrid.jsx';
 import festivals from '../data/festivals.js';
 ---
 
@@ -13,16 +13,8 @@ import festivals from '../data/festivals.js';
   <div class="highlight-box" style="margin-bottom: 28px;" set:html={festivals.intro.html} />
 
   <h3 class="sub-label"><i class="fa-solid fa-store"></i> 주요 크리스마스 마켓</h3>
-  <div class="grid">
-    {festivals.markets.map((item, i) => (
-      <Card client:visible data={item} />
-    ))}
-  </div>
+  <MasonryGrid client:visible items={festivals.markets} />
 
   <h3 class="sub-label"><i class="fa-solid fa-calendar-star"></i> 그 외 크리스마스 일정</h3>
-  <div class="grid">
-    {festivals.events.map((item, i) => (
-      <Card client:visible data={item} />
-    ))}
-  </div>
+  <MasonryGrid client:visible items={festivals.events} />
 </Layout>

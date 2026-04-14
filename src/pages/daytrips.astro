@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.jsx';
+import MasonryGrid from '../components/MasonryGrid.jsx';
 import daytrips from '../data/daytrips.js';
 ---
 
@@ -9,9 +9,5 @@ import daytrips from '../data/daytrips.js';
     <h2 class="sec-head__title">근교 투어</h2>
     <p class="sec-head__sub">바르셀로나에서 당일치기로 다녀올 수 있는 근교 관광지 {daytrips.length}곳</p>
   </div>
-  <div class="grid grid--single">
-    {daytrips.map((item, i) => (
-      <Card client:visible data={item} />
-    ))}
-  </div>
+  <MasonryGrid client:visible items={daytrips} />
 </Layout>

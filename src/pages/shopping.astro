@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.jsx';
+import MasonryGrid from '../components/MasonryGrid.jsx';
 import shopping from '../data/shopping.js';
 
 const categories = ['olive', 'fashion', 'food', 'pharmacy'];
@@ -20,11 +20,7 @@ const totalCount = categories.reduce((sum, key) => sum + shopping[key].items.len
         <h3 class="sub-label">
           <i class={`fa-solid ${cat.labelIcon}`}></i> {cat.label}
         </h3>
-        <div class="grid">
-          {cat.items.map((item, i) => (
-            <Card client:visible data={item} />
-          ))}
-        </div>
+        <MasonryGrid client:visible items={cat.items} />
       </>
     );
   })}

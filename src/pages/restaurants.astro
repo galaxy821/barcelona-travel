@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.jsx';
+import MasonryGrid from '../components/MasonryGrid.jsx';
 import restaurants from '../data/restaurants.js';
 
 const totalCount = restaurants.main.length + restaurants.sagrada.length + restaurants.dessert.length;
@@ -12,23 +12,11 @@ const totalCount = restaurants.main.length + restaurants.sagrada.length + restau
     <p class="sec-head__sub">현지 맛집부터 한국인 입맛 저격 식당까지 {totalCount}곳</p>
   </div>
 
-  <div class="grid">
-    {restaurants.main.map((item, i) => (
-      <Card client:visible data={item} />
-    ))}
-  </div>
+  <MasonryGrid client:visible items={restaurants.main} />
 
   <h3 class="sub-label"><i class="fa-solid fa-church"></i> 사그라다 파밀리아 주변 맛집</h3>
-  <div class="grid">
-    {restaurants.sagrada.map((item, i) => (
-      <Card client:visible data={item} />
-    ))}
-  </div>
+  <MasonryGrid client:visible items={restaurants.sagrada} />
 
   <h3 class="sub-label"><i class="fa-solid fa-ice-cream"></i> 디저트 &middot; 카페</h3>
-  <div class="grid">
-    {restaurants.dessert.map((item, i) => (
-      <Card client:visible data={item} />
-    ))}
-  </div>
+  <MasonryGrid client:visible items={restaurants.dessert} />
 </Layout>
