@@ -157,6 +157,44 @@ button { font-family: inherit; }
   margin-top: 6px;
 }
 
+/* Hero CTA button (external site link) */
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 11px 22px;
+  background: rgba(255,255,255,.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255,255,255,.32);
+  border-radius: var(--r-full);
+  color: var(--c-white);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  transition: transform var(--t-fast), background var(--t-fast), border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.hero__cta:hover {
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+.hero__cta-emoji {
+  font-size: 16px;
+  line-height: 1;
+}
+.hero__cta i {
+  font-size: 11px;
+  transition: transform var(--t-fast);
+}
+.hero__cta:hover i {
+  transform: translateX(3px);
+}
+
 /* ==============================================
    STICKY TAB NAV
    ============================================== */
