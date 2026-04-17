@@ -1062,8 +1062,38 @@ button { font-family: inherit; }
   backdrop-filter: blur(4px);
 }
 
+/* ── Three.js 조작 안내 배너 ── */
+.bcn-3d-hint {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  padding: 7px 18px;
+  background: rgba(10, 22, 40, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r-full);
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.78);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 5;
+  animation: fadeInDown .5s var(--ease);
+}
+.bcn-3d-hint span { display: flex; align-items: center; gap: 5px; }
+.bcn-3d-hint i { color: rgba(255,255,255,0.5); font-size: 10px; }
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
 /* map page: 패널 여백 제거 */
 @media (max-width: 767px) {
   .bcn-map-root { padding: 0 12px 40px; }
   .bcn-map-canvas { height: 60vh; }
+  .bcn-3d-hint { display: none; }
 }

@@ -1,31 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import MapInteractive from '../components/MapInteractive.jsx';
+import ThreeMap from '../components/ThreeMap.jsx';
 import mapLocations from '../data/mapLocations.js';
 ---
 
-<Layout title="지도 - Barcelona Travel Guide 2025" activeTab="map">
+<Layout title="3D 지도 - Barcelona Travel Guide 2025" activeTab="map">
   <div class="sec-head">
-    <h2 class="sec-head__title">바르셀로나 추천 지도</h2>
-    <p class="sec-head__sub">직접 다녀온 명소, 맛집, 쇼핑 &amp; 근교 투어 한눈에 보기</p>
+    <h2 class="sec-head__title">바르셀로나 3D 지도</h2>
+    <p class="sec-head__sub">카탈루냐 지형 위에 펼쳐진 추천 장소 &amp; 근교 여행 한눈에 보기</p>
   </div>
 
-  <MapInteractive client:visible locations={mapLocations} />
+  <ThreeMap client:visible locations={mapLocations} />
 </Layout>
-
-<style>
-  /* map page overrides: 최대 너비 확장 */
-  :global(.content) {
-    max-width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  :global(.panel) {
-    padding: 0 !important;
-  }
-  :global(.sec-head) {
-    padding: 0 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-</style>
