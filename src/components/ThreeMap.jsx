@@ -30,6 +30,7 @@ export default function ThreeMap({ locations = [] }) {
 
   const [ready,   setReady]   = useState(false);
   const [filters, setFilters] = useState(() => new Set(Object.keys(CAT)));
+  const prevFiltersRef = useRef(new Set(Object.keys(CAT)));
 
   /* ── 지도 초기화 ────────────────────────────────── */
   useEffect(() => {
@@ -127,6 +128,7 @@ export default function ThreeMap({ locations = [] }) {
 
   /* ── 필터 적용 ────────────────────────────────────── */
   useEffect(() => {
+    /* 마커 표시/숨김 */
     markersRef.current.forEach(({ el, category }) => {
       el.style.display = filters.has(category) ? '' : 'none';
     });
@@ -134,13 +136,21 @@ export default function ThreeMap({ locations = [] }) {
     const map = mapRef.current;
     if (!map) return;
 
-    /* 근교만 선택 → 전체 범위로 줌 아웃 */
-    const active = [...filters];
-    if (active.length === 1 && active[0] === 'daytrip') {
-      map.fitBounds(DAYTRIP_BOUNDS, { padding: 60, pitch: 30, duration: 800 });
-    } else if (active.length > 0 && !active.every(c => c === 'daytrip') && map.getZoom() < 11) {
+    const prev = prevFiltersRef.current;
+    const daytripOn  = filters.has('daytrip');
+    const daytripWasOff = !prev.has('daytrip');
+
+    if (daytripOn) {
+      /* 근교가 방금 켜졌거나, 근교만 단독 선택된 경우 → 줌 아웃 */
+      if (daytripWasOff || filters.size === 1) {
+        map.fitBounds(DAYTRIP_BOUNDS, { padding: 80, maxZoom: 10, pitch: 30, duration: 900 });
+      }
+    } else if (prev.has('daytrip') && !daytripOn) {
+      /* 근교가 방금 꺼진 경우 → 바르셀로나 기본 뷰 복귀 */
       map.flyTo({ ...DEFAULT_VIEW, duration: 700 });
     }
+
+    prevFiltersRef.current = new Set(filters);
   }, [filters]);
 
   /* ── 필터 토글 ────────────────────────────────────── */
