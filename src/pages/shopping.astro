@@ -3,14 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import MasonryGrid from '../components/MasonryGrid.jsx';
 import shopping from '../data/shopping.js';
 
-const categories = ['olive', 'fashion', 'food', 'pharmacy'];
+const categories = ['souvenir', 'grocery'];
 const totalCount = categories.reduce((sum, key) => sum + shopping[key].items.length, 0);
 ---
 
 <Layout title="쇼핑 - Barcelona Travel Guide 2025" activeTab="shopping">
   <div class="sec-head">
     <h2 class="sec-head__title">쇼핑 리스트</h2>
-    <p class="sec-head__sub">바르셀로나에서 꼭 사와야 할 기념품 &amp; 쇼핑 스팟 {totalCount}곳</p>
+    <p class="sec-head__sub">세비야 오렌지 기념품과 숙소 조리를 위한 장보기 팁 {totalCount}곳</p>
   </div>
 
   {categories.map((key) => {
