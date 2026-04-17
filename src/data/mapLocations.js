@@ -1,6 +1,11 @@
 // src/data/mapLocations.js
 // Barcelona travel map locations with coordinates [lng, lat] (GeoJSON 표준)
-// 좌표 출처: OpenStreetMap Nominatim API 실측값 (2026-04-18 전수 검증)
+//
+// ▶ 좌표 검증 방법 (2026-04-18 전수 재검증)
+//   - maps.app.goo.gl / goo.gl 단축 URL 302 리다이렉트 추적
+//   - 리다이렉트 URL의 !3d{lat}!4d{lng} 파라미터 직접 추출 (구글 지도 공식 장소 좌표)
+//   - 단축 URL 없는 장소: OpenStreetMap Nominatim API 보완
+//
 // categories: 'gaudi' | 'attraction' | 'restaurant' | 'dessert' | 'shopping' | 'daytrip'
 
 const mapLocations = [
@@ -13,7 +18,7 @@ const mapLocations = [
     name: '사그라다 파밀리아',
     nameEn: 'Basílica de la Sagrada Família',
     category: 'gaudi',
-    coords: [2.1744, 41.4035],
+    coords: [2.1744, 41.4036],   // !3d41.4036299!4d2.1743558
     address: 'Carrer de Mallorca, 401, Eixample',
     visited: true,
     desc: '바르셀로나 필수 관광명소. 실내 구경 강력 추천! 온라인 사전 예매 필수.',
@@ -25,7 +30,7 @@ const mapLocations = [
     name: '카사 바트요',
     nameEn: 'Casa Batlló',
     category: 'gaudi',
-    coords: [2.1647, 41.3915],
+    coords: [2.1649, 41.3917],   // !3d41.3917!4d2.164918
     address: 'Pg. de Gràcia, 43, Eixample',
     visited: true,
     desc: '아침 일찍 입장하면 대기줄 없이 입장 가능. 온라인 사전 예매 추천.',
@@ -37,7 +42,7 @@ const mapLocations = [
     name: '카사 밀라',
     nameEn: 'Casa Milà / La Pedrera',
     category: 'gaudi',
-    coords: [2.1618, 41.3954],
+    coords: [2.1619, 41.3952],   // !3d41.3952155!4d2.1619024
     address: 'Pg. de Gràcia, 92, Eixample',
     visited: true,
     desc: '옥상에서 사그라다 파밀리아 조망 가능. 개별 방문 추천.',
@@ -49,7 +54,7 @@ const mapLocations = [
     name: '구엘 공원',
     nameEn: 'Park Güell',
     category: 'gaudi',
-    coords: [2.1525, 41.4142],
+    coords: [2.1527, 41.4145],   // !3d41.4144948!4d2.1526945
     address: 'Carrer d\'Olot, Gràcia',
     visited: true,
     desc: '고지대에서 바르셀로나 시내 전경 조망 가능. 온라인 사전 예매 필수.',
@@ -61,7 +66,7 @@ const mapLocations = [
     name: '구엘 저택',
     nameEn: 'Palau Güell',
     category: 'gaudi',
-    coords: [2.1742, 41.3788],
+    coords: [2.1742, 41.3789],   // !3d41.3788851!4d2.1742398
     address: 'Carrer Nou de la Rambla, 3-5, Ciutat Vella',
     visited: true,
     desc: '가우디 초기 작품의 정수. 실내 구경 추천.',
@@ -73,7 +78,7 @@ const mapLocations = [
     name: '까사 비센스',
     nameEn: 'Casa Vicens Gaudí',
     category: 'gaudi',
-    coords: [2.1506, 41.4035],
+    coords: [2.1506, 41.4035],   // !3d41.4034978!4d2.1506455
     address: 'Carrer de les Carolines, 20-26, Gràcia',
     desc: '가우디의 첫 번째 작품. 무어인의 영향을 받은 독특한 외관.',
     mapLink: 'https://maps.app.goo.gl/EVhy5GbX9WjLsvEC7',
@@ -87,7 +92,7 @@ const mapLocations = [
     name: '플라사 레이알',
     nameEn: 'Plaça Reial',
     category: 'attraction',
-    coords: [2.1750, 41.3801],
+    coords: [2.1752, 41.3801],   // !3d41.3801239!4d2.1751625
     address: 'Pl. Reial, 10, Ciutat Vella',
     visited: true,
     desc: '가우디의 가로등 작품을 볼 수 있는 아름다운 광장. 무료 입장.',
@@ -99,7 +104,7 @@ const mapLocations = [
     name: '바르셀로나 대성당',
     nameEn: 'Cathedral of Barcelona',
     category: 'attraction',
-    coords: [2.1766, 41.3839],
+    coords: [2.1762, 41.3840],   // !3d41.383962!4d2.1761991
     address: 'Pla de la Seu, s/n, Ciutat Vella',
     visited: true,
     desc: '고딕 양식의 웅장한 대성당. 무료 입장 (특별 구역 유료).',
@@ -111,7 +116,7 @@ const mapLocations = [
     name: '카탈루냐 음악당',
     nameEn: 'Palau de la Música Catalana',
     category: 'attraction',
-    coords: [2.1752, 41.3876],
+    coords: [2.1753, 41.3876],   // !3d41.3875752!4d2.1753128
     address: 'C/ Palau de la Música, 4-6, Ciutat Vella',
     desc: '유네스코 세계문화유산. 화려한 스테인드글라스가 인상적.',
     price: '가이드 투어 약 20유로',
@@ -122,7 +127,7 @@ const mapLocations = [
     name: '몬주익 마법의 분수',
     nameEn: 'Font Màgica de Montjuïc',
     category: 'attraction',
-    coords: [2.1517, 41.3712],
+    coords: [2.1517, 41.3712],   // !3d41.3711603!4d2.1517402
     address: 'Pl. de Carles Buigas, Sants-Montjuïc',
     desc: '음악과 조명에 맞춰 물줄기가 춤추는 환상적인 분수 쇼 (약 15분). 무료.',
     price: '무료',
@@ -133,7 +138,7 @@ const mapLocations = [
     name: '몬주익 성',
     nameEn: 'Castell de Montjuïc',
     category: 'attraction',
-    coords: [2.1662, 41.3633],
+    coords: [2.1651, 41.3630],   // !3d41.362959!4d2.1650636
     address: 'Ctra. de Montjuïc, 66, Sants-Montjuïc',
     desc: '텔레페릭 타고 이동 추천. 일요일 15시 이후 무료.',
     price: '약 5유로 (일요일 15시 이후 무료)',
@@ -144,7 +149,7 @@ const mapLocations = [
     name: '티비다보 놀이공원',
     nameEn: "Parc d'Atraccions Tibidabo",
     category: 'attraction',
-    coords: [2.1199, 41.4232],
+    coords: [2.1194, 41.4216],   // !3d41.421632!4d2.1194491
     address: "Plaça del Tibidabo, 3-4, Barcelona",
     desc: '바르셀로나 최고 전망을 자랑하는 놀이공원. 시간 여유가 있다면 방문 추천.',
     price: '약 35유로',
@@ -159,7 +164,7 @@ const mapLocations = [
     name: 'Bar Anxoita',
     nameEn: '꿀대구 맛집',
     category: 'restaurant',
-    coords: [2.1622, 41.3934],
+    coords: [2.1623, 41.3935],   // !3d41.3934903!4d2.1622624
     address: 'Carrer de Mallorca, 250, Eixample',
     visited: true,
     desc: '꿀대구 (Bacalao) 6~8유로. 점심 웨이팅 있을 수 있음.',
@@ -170,7 +175,7 @@ const mapLocations = [
     name: 'Vinitus',
     nameEn: '꿀대구 맛집',
     category: 'restaurant',
-    coords: [2.1641, 41.3900],
+    coords: [2.1640, 41.3900],   // !3d41.3900261!4d2.1640484
     address: 'Carrer del Consell de Cent, 333, Eixample',
     visited: true,
     desc: '꿀대구 (Bacalao) 맛집. 웨이팅 거의 필수.',
@@ -181,7 +186,7 @@ const mapLocations = [
     name: '라보케리아 시장',
     nameEn: 'Mercat de la Boqueria',
     category: 'restaurant',
-    coords: [2.1716, 41.3817],
+    coords: [2.1716, 41.3817],   // !3d41.3817399!4d2.1715853
     address: 'La Rambla, 91, Ciutat Vella',
     visited: true,
     desc: '바르셀로나 대표 재래시장. 신선한 과일, 해산물, 타파스를 즐길 수 있는 곳.',
@@ -192,7 +197,7 @@ const mapLocations = [
     name: 'Makamaka',
     nameEn: '수제 버거',
     category: 'restaurant',
-    coords: [2.1886, 41.3757],
+    coords: [2.1886, 41.3757],   // !3d41.3757485!4d2.1886192
     address: 'Pg. de Joan de Borbó, 76, Barceloneta',
     visited: true,
     desc: '수제 버거 맛집. 바르셀로네타 해변 근처.',
@@ -203,7 +208,7 @@ const mapLocations = [
     name: 'Cerveceria Catalana',
     nameEn: '타파스 전문 레스토랑',
     category: 'restaurant',
-    coords: [2.1609, 41.3924],
+    coords: [2.1609, 41.3923],   // !3d41.3923251!4d2.1608515
     address: 'Carrer de Mallorca, 236, Eixample',
     desc: '감자, 문어, 감바스 등 다양한 타파스. 인기 맛집.',
     mapLink: 'https://maps.app.goo.gl/ZfoSauizQEB6vhmq5',
@@ -213,8 +218,8 @@ const mapLocations = [
     name: 'Oporto Restaurante',
     nameEn: '포르투갈 음식',
     category: 'restaurant',
-    coords: [2.1753, 41.4021],
-    address: 'Carrer de Sardenya, 296, Eixample',
+    coords: [2.1753, 41.4021],   // OSM: Carrer de Sardenya 296, Local 1
+    address: 'Carrer de Sardenya, 296, Local 1, Eixample',
     desc: '국물 빠에야, 문어 세비체, 문어 구이. 화요일 휴무.',
     mapLink: 'https://goo.gl/maps/7gWvPPTQAMvVMVtk7',
   },
@@ -223,7 +228,7 @@ const mapLocations = [
     name: 'El Glop Gaudi',
     nameEn: '빠에야 전문',
     category: 'restaurant',
-    coords: [2.1769, 41.4031],
+    coords: [2.1768, 41.4031],   // !3d41.4030754!4d2.1767836
     address: 'Carrer de València, 443, Eixample',
     desc: '빠에야 종류 추천. 스페인 스파클링 와인 까바 한 잔도 추천.',
     mapLink: 'https://goo.gl/maps/LMGbpRSViqb33a3M8',
@@ -231,10 +236,10 @@ const mapLocations = [
   {
     id: 'puertecillo',
     name: 'Puertecillo',
-    nameEn: '해산물 체인점',
+    nameEn: '해산물 레스토랑',
     category: 'restaurant',
-    coords: [2.1817, 41.3882],
-    address: 'Carrer del Comerç, 7, El Born',
+    coords: [2.1734, 41.4045],   // OSM: Passatge de Simó 18 (mapLink 실제 위치)
+    address: 'Passatge de Simó, 18, Eixample',
     desc: '오늘의 메뉴, 오징어, 맛조개, 토마토 홍합스튜. 월요일 휴무.',
     mapLink: 'https://goo.gl/maps/ezdQJ7HoKnHdWtAt5',
   },
@@ -243,7 +248,7 @@ const mapLocations = [
     name: '토스카',
     nameEn: 'Tosca Palau',
     category: 'restaurant',
-    coords: [2.1756, 41.3874],
+    coords: [2.1756, 41.3874],   // !3d41.3873806!4d2.1756389
     address: 'Carrer de Sant Pere Més Alt, 8, Ciutat Vella',
     desc: '참치 타다끼, 갈릭 프라운 추천.',
     mapLink: 'https://maps.app.goo.gl/u6JLDhkJouotXc9w9',
@@ -253,7 +258,7 @@ const mapLocations = [
     name: '시우다드 콘달',
     nameEn: 'Ciutat Comtal',
     category: 'restaurant',
-    coords: [2.1669, 41.3888],
+    coords: [2.1670, 41.3889],   // !3d41.3888547!4d2.1670033
     address: 'Rambla de Catalunya, 18, Eixample',
     desc: '타파스바.',
     mapLink: 'https://maps.app.goo.gl/cA41YqBS7r5pTySV6',
@@ -267,7 +272,7 @@ const mapLocations = [
     name: 'Bilmonte',
     nameEn: '아이스크림',
     category: 'dessert',
-    coords: [2.1636, 41.3893],
+    coords: [2.1636, 41.3894],   // !3d41.3894089!4d2.1636435
     address: 'Carrer del Consell de Cent, 282, Eixample',
     visited: true,
     desc: '아이스크림 전문점.',
@@ -278,7 +283,7 @@ const mapLocations = [
     name: '추레리아 마누엘 산 로만',
     nameEn: 'Xurreria Manuel San Román',
     category: 'dessert',
-    coords: [2.1752, 41.3822],
+    coords: [2.1751, 41.3822],   // !3d41.3822384!4d2.1751146
     address: 'Carrer dels Banys Nous, 8, Ciutat Vella',
     desc: '츄러스 전문점. 기본 츄러스에 딥초코 조합으로 먹기.',
     mapLink: 'https://maps.app.goo.gl/Fv1fZVwZMuhsqAUh8',
@@ -288,7 +293,7 @@ const mapLocations = [
     name: 'Be Chocolat',
     nameEn: '초콜릿 카페',
     category: 'dessert',
-    coords: [2.1746, 41.3827],
+    coords: [2.1746, 41.3827],   // !3d41.3826688!4d2.1746397
     address: 'Carrer dels Banys Nous, 17, Ciutat Vella',
     desc: '초콜릿 카페.',
     mapLink: 'https://maps.app.goo.gl/t1ZfYksXmtdFpEMG9',
@@ -298,7 +303,7 @@ const mapLocations = [
     name: 'Cake-me',
     nameEn: 'Cheesecake 0.99€',
     category: 'dessert',
-    coords: [2.1753, 41.3820],
+    coords: [2.1752, 41.3820],   // !3d41.3819618!4d2.1751863
     address: 'Carrer dels Banys Nous, 3, Ciutat Vella',
     desc: '케이크 전문점. 치즈케이크 저렴!',
     mapLink: 'https://maps.app.goo.gl/jvkPtTZwmovfBvSd7',
@@ -312,8 +317,8 @@ const mapLocations = [
     name: 'La Chinata',
     nameEn: '올리브 오일 전문점',
     category: 'shopping',
-    coords: [2.1639, 41.3925],
-    address: 'Pg. de Gràcia, 55, Eixample',
+    coords: [2.1680, 41.3910],   // !3d41.3909742!4d2.1680115
+    address: 'Carrer de la Diputació, Eixample',
     visited: true,
     desc: '트러플 올리브 오일 추천. 올리브 립밤 (2유로대) 선물용으로 좋음.',
     mapLink: 'https://maps.app.goo.gl/WhtVYrYXUnvHtWFY6',
@@ -323,7 +328,7 @@ const mapLocations = [
     name: '사바테르',
     nameEn: 'Sabater Hnos. - 수제 비누',
     category: 'shopping',
-    coords: [2.1751, 41.3832],
+    coords: [2.1751, 41.3832],   // OSM: Plaça de Sant Felip Neri 1
     address: 'Plaça de Sant Felip Neri, 1, Ciutat Vella',
     visited: true,
     desc: '삼대가 내려온 가족 가게. 고딕지구 위치. 선물용으로 좋음.',
@@ -334,7 +339,7 @@ const mapLocations = [
     name: 'Cereria Subirà',
     nameEn: '양초 전문점 (1761년~)',
     category: 'shopping',
-    coords: [2.1780, 41.3838],
+    coords: [2.1780, 41.3838],   // !3d41.383784!4d2.1780325
     address: 'Baixada de la Llibreteria, 7, Ciutat Vella',
     visited: true,
     desc: '1761년부터 이어온 바르셀로나에서 가장 오래된 양초집. 사그라다 파밀리아 실루엣 촛대 추천.',
@@ -345,7 +350,7 @@ const mapLocations = [
     name: 'El Corte Inglés',
     nameEn: 'Plaça de Catalunya',
     category: 'shopping',
-    coords: [2.1712, 41.3879],
+    coords: [2.1710, 41.3876],   // !3d41.3876381!4d2.171023
     address: 'Pl. de Catalunya, 14, Eixample',
     visited: true,
     desc: '카탈루냐 광장 앞 스페인 독점 백화점. 지하 식품관에 슈퍼마켓과 고메마켓.',
@@ -356,7 +361,7 @@ const mapLocations = [
     name: 'Torrons Vicens',
     nameEn: '스페인 누가 뚜론 (1775년~)',
     category: 'shopping',
-    coords: [2.1643, 41.3854],
+    coords: [2.1642, 41.3853],   // !3d41.3853141!4d2.1642309
     address: 'Carrer dels Tallers, el Raval, Barcelona',
     desc: '1775년부터 시작된 가족 기업. 기념품 초콜릿 판매.',
     mapLink: 'https://maps.app.goo.gl/MpK5y7f93xxKtS638',
@@ -366,7 +371,7 @@ const mapLocations = [
     name: 'La Manual Alpargatera',
     nameEn: '에스파듀 (스페인 짚신)',
     category: 'shopping',
-    coords: [2.1761, 41.3816],
+    coords: [2.1761, 41.3816],   // OSM: Carrer d'Avinyó 7
     address: 'Carrer d\'Avinyó, 7, Ciutat Vella',
     desc: '천연 소재 수제 신발. 삼대가 만들고 있음. 한국어 안내 가능.',
     mapLink: 'https://g.page/lamanual?share',
@@ -380,7 +385,7 @@ const mapLocations = [
     name: '몬세라트 수도원',
     nameEn: 'Montserrat Monastery',
     category: 'daytrip',
-    coords: [1.8375, 41.5934],
+    coords: [1.8375, 41.5934],   // OSM: Monestir de Montserrat
     address: 'Monestir de Montserrat, 08199 (바르셀로나에서 약 60km)',
     visited: true,
     desc: '하루 투어 추천. 아침 8~9시 출발. 패키지 티켓 온라인 사전 구매 추천.',
@@ -391,7 +396,7 @@ const mapLocations = [
     name: '지로나',
     nameEn: 'Girona',
     category: 'daytrip',
-    coords: [2.8253, 41.9864],
+    coords: [2.8263, 41.9875],   // OSM: Catedral de Girona
     address: 'Girona Cathedral (바르셀로나에서 약 100km)',
     desc: '왕좌의 게임 촬영지. 고속열차 약 38분. 반나절~하루 코스.',
     mapLink: 'https://www.google.com/maps/place/Girona+Cathedral/',
@@ -401,8 +406,8 @@ const mapLocations = [
     name: '시제스',
     nameEn: 'Sitges',
     category: 'daytrip',
-    coords: [1.8144, 41.2359],
-    address: 'Sitges, Platja de Sant Sebastià (바르셀로나에서 약 35km)',
+    coords: [1.8118, 41.2351],   // OSM: Ajuntament de Sitges (해변 시내 중심)
+    address: 'Sitges (바르셀로나에서 약 35km)',
     desc: '바르셀로나에서 가장 가까운 해변 도시. 반나절이면 충분.',
     mapLink: 'https://www.google.com/maps/place/Sitges/',
   },
